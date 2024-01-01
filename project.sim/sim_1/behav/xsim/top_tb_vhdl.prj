@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project.gen/sources_1/ip/ClkGen/ClkGen_sim_netlist.vhdl" \
+"../../../../project.srcs/sources_1/imports/new/hsync.vhd" \
+"../../../../project.srcs/sources_1/imports/new/vsync.vhd" \
+"../../../../project.srcs/sources_1/new/VGA.vhd" \
+"../../../../project.srcs/sources_1/new/top.vhd" \
+"../../../../project.srcs/sim_1/new/top_tb.vhd" \
+
+# Do not sort compile order
+nosort

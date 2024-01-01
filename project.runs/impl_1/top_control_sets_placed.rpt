@@ -1,0 +1,105 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Mon Jan  1 21:18:40 2024
+| Host         : DESKTOP-NTKOJC8 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    27 |
+|    Minimum number of control sets                        |    27 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    89 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    27 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     4 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     8 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              21 |            9 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              72 |           23 |
+| Yes          | No                    | No                     |              90 |           23 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             144 |           48 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------+------------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+|      Clock Signal      |                        Enable Signal                       |                Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------+------------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+|  clk108/inst/clk108mhz | VGA/hsync/q_i_2_n_0                                        | accelerometer/adxl/SR[0]                      |                1 |              1 |         1.00 |
+|  clk108/inst/clk108mhz | VGA/vsync/q_i_1_n_0                                        | accelerometer/adxl/SR[0]                      |                1 |              1 |         1.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/CE_Cnt_Num_Reads                        | accelerometer/adxl/Reset_Cnt_Num_Reads        |                1 |              4 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/Cmd_Reg[0]_3                            | accelerometer/adxl/Cmd_Reg[0][6]_i_1_n_0      |                1 |              4 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0 | accelerometer/adxl/SR[0]                      |                3 |              4 |         1.33 |
+|  clk108/inst/clk108mhz | spaceship/pos_y                                            | spaceship/pos_x[10]_i_1_n_0                   |                1 |              4 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/Cmd_Reg[1][6]_i_2_n_0                   | accelerometer/adxl/Cmd_Reg[1]0_in[7]          |                1 |              5 |         5.00 |
+|  clk108/inst/clk108mhz |                                                            | accelerometer/adxl/SR[0]                      |                2 |              6 |         3.00 |
+|  clk108/inst/clk108mhz |                                                            | accelerometer/adxl/SPI_Interface/SCLK_2X_DIV0 |                2 |              6 |         3.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/Cmd_Reg[2]_1                            | accelerometer/adxl/Cmd_Reg[2]_2[7]            |                1 |              6 |         6.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/Shift_Cmd_Reg                           | accelerometer/adxl/SR[0]                      |                1 |              7 |         7.00 |
+|  clk108/inst/clk108mhz | spaceship/clock_enable                                     | spaceship/pos_y[9]_i_1_n_0                    |                2 |              7 |         3.50 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/SPI_Interface/EN_LOAD_DOUT              |                                               |                2 |              8 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/SPI_Interface/SHIFT_TICK_IN             |                                               |                3 |              8 |         2.67 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/SPI_Interface/MOSI_REG[7]_i_1_n_0       |                                               |                1 |              8 |         8.00 |
+|  clk108/inst/clk108mhz | spaceship/pos_y                                            |                                               |                4 |             10 |         2.50 |
+|  clk108/inst/clk108mhz |                                                            | accelerometer/adxl/Cnt_SS_Inactive0           |                3 |             11 |         3.67 |
+|  clk108/inst/clk108mhz |                                                            | VGA/hsync/reset_count                         |                5 |             11 |         2.20 |
+|  clk108/inst/clk108mhz | VGA/hsync/clock_enable                                     | VGA/vsync/reset_count                         |                5 |             11 |         2.20 |
+|  clk108/inst/clk108mhz |                                                            | accelerometer/adxl/Sample_Rate_Div[0]_i_1_n_0 |                5 |             17 |         3.40 |
+|  clk108/inst/clk108mhz |                                                            |                                               |                9 |             21 |         2.33 |
+|  clk108/inst/clk108mhz |                                                            | spaceship/count[0]_i_1__1_n_0                 |                6 |             21 |         3.50 |
+|  clk108/inst/clk108mhz | spaceship/display_spaceship                                |                                               |                7 |             22 |         3.14 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/StC_Adxl_Ctrl[3]                        | accelerometer/adxl/SR[0]                      |                6 |             24 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/CE_Cnt_Num_Reads                        | accelerometer/adxl/ACCEL_X_SUM0               |                8 |             32 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/E[0]                                    | accelerometer/adxl/SR[0]                      |               16 |             34 |         2.12 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/SPI_Interface/Shift_Data_Reg            |                                               |                6 |             42 |         7.00 |
++------------------------+------------------------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+
+
