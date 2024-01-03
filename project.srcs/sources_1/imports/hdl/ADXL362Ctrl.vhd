@@ -96,21 +96,21 @@ generic
 );
 port
 (
-   SYSCLK     : in STD_LOGIC; -- System Clock
+   clock     : in STD_LOGIC; -- System Clock
    RESET      : in STD_LOGIC;
 
    -- Accelerometer data signals
-   ACCEL_X    : out STD_LOGIC_VECTOR (11 downto 0);
-   ACCEL_Y    : out STD_LOGIC_VECTOR (11 downto 0);
-   ACCEL_Z    : out STD_LOGIC_VECTOR (11 downto 0);
-   ACCEL_TMP  : out STD_LOGIC_VECTOR (11 downto 0);
-   Data_Ready : out STD_LOGIC;
+   accel_x    : out STD_LOGIC_VECTOR (11 downto 0);
+   accel_y    : out STD_LOGIC_VECTOR (11 downto 0);
+   accel_z    : out STD_LOGIC_VECTOR (11 downto 0);
+   accel_temp  : out STD_LOGIC_VECTOR (11 downto 0);
+   accel_ready : out STD_LOGIC;
 
    --SPI Interface Signals
-   SCLK       : out STD_LOGIC;
-   MOSI       : out STD_LOGIC;
-   MISO       : in STD_LOGIC;
-   SS         : out STD_LOGIC
+   sclk       : out STD_LOGIC;
+   mosi       : out STD_LOGIC;
+   miso       : in STD_LOGIC;
+   ss         : out STD_LOGIC
 );
 end ADXL362Ctrl;
 
@@ -378,7 +378,7 @@ generic map
 )
 port map
 (
- SYSCLK => SYSCLK,  
+ SYSCLK => clock,  
  RESET  => RESET,
  Din    => D_Send,
  Dout   => D_Rec,
@@ -399,9 +399,9 @@ SPI_SendRec_Done  <= StC_Spi_SendRec(4); -- Transfer of the number of bytes is d
 Start             <= StC_Spi_SendRec(3); -- Send the Start command to the SPI interface 
                                           --in the stSpiSendStartW (writing) or stSpiSendStartR (Reading) states
 -- Load D_Send with the new data to be transmitted
-Load_D_Send: process (SYSCLK, RESET, Cmd_Reg, Shift_Cmd_Reg)
+Load_D_Send: process (clock, RESET, Cmd_Reg, Shift_Cmd_Reg)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if RESET = '1' then
          D_Send <= X"00";
       elsif Shift_Cmd_Reg = '1' then
@@ -440,9 +440,9 @@ Data_Ready_1            <= StC_Adxl_Ctrl(4);  -- To signal external components t
 
 
 -- Load and shift Cmd_Reg according to the active commands
-Load_Shift_Cmd_Reg: process (SYSCLK, Cmd_Reg, Cmd_Reg_Data_Addr, StC_Adxl_Ctrl, Load_Cmd_Reg, Shift_Cmd_Reg)
+Load_Shift_Cmd_Reg: process (clock, Cmd_Reg, Cmd_Reg_Data_Addr, StC_Adxl_Ctrl, Load_Cmd_Reg, Shift_Cmd_Reg)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if Load_Cmd_Reg = '1' then -- Load with data
          if       (StC_Adxl_Ctrl = stAdxlSendResetCmd) 
                or (StC_Adxl_Ctrl = stAdxlConf_Remaining) then -- In this case load with command vectors
@@ -477,9 +477,9 @@ end process Load_Shift_Cmd_Reg;
 -- Increment by two the Cmd_Reg_Data_Addr after a SPI Register Write transaction is done
 Advance_Cmd_Reg_Addr <= EN_Advance_Cmd_Reg_Addr AND SPI_Trans_Done;
 
-Count_Addr: process (SYSCLK, RESET, Cmd_Reg_Data_Addr, StC_Adxl_Ctrl, Advance_Cmd_Reg_Addr)
+Count_Addr: process (clock, RESET, Cmd_Reg_Data_Addr, StC_Adxl_Ctrl, Advance_Cmd_Reg_Addr)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if RESET = '1'  or StC_Adxl_Ctrl = stAdxlCtrlIdle then
          Cmd_Reg_Data_Addr <= 0;
       elsif Advance_Cmd_Reg_Addr = '1' then
@@ -499,10 +499,10 @@ Cmd_Reg_Addr_Done <= '1' when Cmd_Reg_Data_Addr = (NUM_COMMAND_VEC - 1) else '0'
 -- Shift Data_Reg when a new byte comes
 Shift_Data_Reg <= EN_Shift_Data_Reg AND Done;
 -- Read incoming data
-Read_Data: process (SYSCLK, Shift_Data_Reg, D_Rec, Data_Reg) -- When reading the status register, one byte is read, therefore
+Read_Data: process (clock, Shift_Data_Reg, D_Rec, Data_Reg) -- When reading the status register, one byte is read, therefore
 variable i: integer range 0 to 6 := 0;                       -- the status register data will be on Data_Reg(0)
 begin                                                        -- When reading incoming data, exactly 8 reads are performed,
-   if SYSCLK'EVENT AND SYSCLK = '1' then                     -- therefore no initialization is required for Data_Reg
+   if clock'EVENT AND clock = '1' then                     -- therefore no initialization is required for Data_Reg
       if Shift_Data_Reg = '1' then                     
          for i in 0 to 6 loop
             Data_Reg(i+1) <= Data_Reg(i);
@@ -513,9 +513,9 @@ begin                                                        -- When reading inc
 end process Read_Data;
 
 -- Count the bytes to be send and to be received
-Count_Bytes_Send: process (SYSCLK, Reset_Cnt_Bytes, Load_Cnt_Bytes_Sent, Shift_Cmd_Reg, Cnt_Bytes_Sent)
+Count_Bytes_Send: process (clock, Reset_Cnt_Bytes, Load_Cnt_Bytes_Sent, Shift_Cmd_Reg, Cnt_Bytes_Sent)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if Reset_Cnt_Bytes = '1' then
           Cnt_Bytes_Sent <= 0;
           
@@ -547,9 +547,9 @@ begin
 end process Count_Bytes_Send;
 
 
-Count_Bytes_Rec: process (SYSCLK, Reset_Cnt_Bytes, Load_Cnt_Bytes_Rec, Shift_Data_Reg, Cnt_Bytes_Rec)
+Count_Bytes_Rec: process (clock, Reset_Cnt_Bytes, Load_Cnt_Bytes_Rec, Shift_Data_Reg, Cnt_Bytes_Rec)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if Reset_Cnt_Bytes = '1' then
           Cnt_Bytes_Rec <= 0;
  
@@ -577,9 +577,9 @@ begin
 end process Count_Bytes_Rec;
 
 -- Create the Sample_Rate_Div counter and the Sample_Rate_Tick signal
-Count_Sample_Rate_Div: process (SYSCLK, Reset_Sample_Rate_Div, Sample_Rate_Div)
+Count_Sample_Rate_Div: process (clock, Reset_Sample_Rate_Div, Sample_Rate_Div)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if Reset_Sample_Rate_Div = '1' then
          Sample_Rate_Div <= 0;
       elsif Sample_Rate_Div = (UPDATE_DIV_RATE - 1) then   
@@ -594,9 +594,9 @@ Sample_Rate_Tick  <= '1' when Sample_Rate_Div = (UPDATE_DIV_RATE - 1) else '0';
 
 
 -- Create the Cnt_Num_Reads counter, self-blocking
-Count_Num_Reads: process (SYSCLK, Reset_Cnt_Num_Reads, CE_Cnt_Num_Reads, Cnt_Num_Reads)
+Count_Num_Reads: process (clock, Reset_Cnt_Num_Reads, CE_Cnt_Num_Reads, Cnt_Num_Reads)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if Reset_Cnt_Num_Reads = '1' then
          Cnt_Num_Reads <= 0;
       elsif CE_Cnt_Num_Reads = '1' then
@@ -612,9 +612,9 @@ end process Count_Num_Reads;
 Cnt_Num_Reads_Done <= '1' when Cnt_Num_Reads = (NUM_READS - 1) else '0';
 
 -- Create the Cnt_SS_Inactive counter, also self_blocking
-Count_SS_Inactive: process (SYSCLK, RESET, Reset_Cnt_SS_Inactive, Cnt_SS_Inactive)
+Count_SS_Inactive: process (clock, RESET, Reset_Cnt_SS_Inactive, Cnt_SS_Inactive)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
       if RESET = '1' or Reset_Cnt_SS_Inactive = '1' then
          Cnt_SS_Inactive <= 0;
       elsif Cnt_SS_Inactive = (SS_INACTIVE_CLOCKS - 1) then   
@@ -630,9 +630,9 @@ Cnt_SS_Inactive_done <= '1' when Cnt_SS_Inactive = (SS_INACTIVE_CLOCKS - 1) else
 
 -- SPI Send/Receive State Machine internal condition signals
 -- SPI_RnW will be controlled according to the states of the Adxl 362 Control state machine
-Set_SPI_RnW: process (SYSCLK, StC_Adxl_Ctrl)
+Set_SPI_RnW: process (clock, StC_Adxl_Ctrl)
 begin
-   if SYSCLK'EVENT AND SYSCLK = '1' then
+   if clock'EVENT AND clock = '1' then
          if    (StC_Adxl_Ctrl = stAdxlRead_Status) 
             or (StC_Adxl_Ctrl = stAdxlRead_Data) then
                   SPI_RnW <= '1';
@@ -648,9 +648,9 @@ SPI_WR_Done <= '1' when Cnt_Bytes_Sent = 0 AND Done = '1' else '0';
 SPI_RD_Done <= '1' when Cnt_Bytes_Rec = 0 AND Done = '1' else '0';
 
 -- Spi Send/Receive State Machine register process
-Register_StC_Spi_SendRec: process (SYSCLK, RESET, StN_Spi_SendRec)
+Register_StC_Spi_SendRec: process (clock, RESET, StN_Spi_SendRec)
 begin
-      if SYSCLK'EVENT AND SYSCLK = '1' then
+      if clock'EVENT AND clock = '1' then
          if RESET = '1' then
             StC_Spi_SendRec <= stSpiSendRecIdle;
          else
@@ -688,9 +688,9 @@ end process Cmb_StC_Spi_SendRec;
 
 
 -- SPI Transaction State Machine register process
-Register_StC_Spi_Trans: process (SYSCLK, RESET, StN_Spi_Trans)
+Register_StC_Spi_Trans: process (clock, RESET, StN_Spi_Trans)
 begin
-      if SYSCLK'EVENT AND SYSCLK = '1' then
+      if clock'EVENT AND clock = '1' then
          if RESET = '1' then
             StC_Spi_Trans <= stSpiTransIdle;
          else
@@ -723,9 +723,9 @@ Adxl_Data_Ready <= Data_Reg(0)(0);
 Adxl_Conf_Err <= Data_Reg(0)(7);
 
 -- ADXL 362 Control State Machine register process
-Register_StC_Adxl_Ctrl: process (SYSCLK, RESET, StN_Adxl_Ctrl)
+Register_StC_Adxl_Ctrl: process (clock, RESET, StN_Adxl_Ctrl)
 begin
-      if SYSCLK'EVENT AND SYSCLK = '1' then
+      if clock'EVENT AND clock = '1' then
          if RESET = '1' then
             StC_Adxl_Ctrl <= stAdxlCtrlIdle;
          else
@@ -778,10 +778,10 @@ end process Cmb_StC_Adxl_Ctrl;
 -- Data_Reg(2) = ZDATA_H,
 -- Data_Reg(1) = TEMP_L,
 -- Data_Reg(0) = TEMP_H
-Sum_Data: process (SYSCLK, RESET, Data_Ready_1, Enable_Sum, Data_Reg, 
+Sum_Data: process (clock, RESET, Data_Ready_1, Enable_Sum, Data_Reg, 
                    ACCEL_X_SUM, ACCEL_Y_SUM, ACCEL_Z_SUM, ACCEL_TMP_SUM)
 begin
-    if SYSCLK'EVENT AND SYSCLK = '1' then
+    if clock'EVENT AND clock = '1' then
          if (RESET = '1' OR Data_Ready_1 = '1') then
             ACCEL_X_SUM <= (others => '0');
             ACCEL_Y_SUM <= (others => '0');
@@ -797,33 +797,33 @@ begin
 end process Sum_Data;
                   
 -- Register the output data
-Register_Output_Data: process (SYSCLK, RESET, Data_Ready_1, ACCEL_X_SUM, 
+Register_Output_Data: process (clock, RESET, Data_Ready_1, ACCEL_X_SUM, 
                                ACCEL_Y_SUM, ACCEL_Z_SUM, ACCEL_TMP_SUM)
 begin
-    if SYSCLK'EVENT AND SYSCLK = '1' then
+    if clock'EVENT AND clock = '1' then
          if RESET = '1' then
             ACCEL_X <= (others => '0');
             ACCEL_Y <= (others => '0');
             ACCEL_Z <= (others => '0');
-            ACCEL_TMP <= (others => '0');
+            ACCEL_TEMP <= (others => '0');
          elsif Data_Ready_1 = '1' then -- Divide by NUM_READS to create the average and set the output data
             ACCEL_X <= ACCEL_X_SUM ((11 + (NUM_READS_BITS)) downto (NUM_READS_BITS)); -- 12 bits
             ACCEL_Y <= ACCEL_Y_SUM ((11 + (NUM_READS_BITS)) downto (NUM_READS_BITS));
             ACCEL_Z <= ACCEL_Z_SUM ((11 + (NUM_READS_BITS)) downto (NUM_READS_BITS));
-            ACCEL_TMP <= ACCEL_TMP_SUM ((11 + (NUM_READS_BITS)) downto (NUM_READS_BITS));
+            ACCEL_TEMP <= ACCEL_TMP_SUM ((11 + (NUM_READS_BITS)) downto (NUM_READS_BITS));
          end if;
     end if;
 end process Register_Output_Data;
 
 -- Pipe Data_Ready from Data_Ready_1 
 -- to have stable output data when Data_Ready becomes active
-Pipe_Data_Ready: process (SYSCLK, RESET, Data_Ready_1)
+Pipe_Data_Ready: process (clock, RESET, Data_Ready_1)
 begin
-    if SYSCLK'EVENT AND SYSCLK = '1' then
+    if clock'EVENT AND clock = '1' then
          if RESET = '1' then
-            Data_Ready <= '0';
+            accel_ready <= '0';
          else
-            Data_Ready <= Data_Ready_1;
+            accel_ready <= Data_Ready_1;
          end if;
     end if;
 end process Pipe_Data_Ready;

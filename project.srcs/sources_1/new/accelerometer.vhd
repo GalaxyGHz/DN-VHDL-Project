@@ -78,14 +78,14 @@ begin
 
     adxl: entity work.ADXL362Ctrl(Behavioral)
         port map (
-            SYSCLK => clk108mhz,
+            clock => clk108mhz,
             reset => reset,
             -- Accelerometer data signals
-            ACCEL_X => accel_x_in,
-            ACCEL_Y => accel_y_in,
-            ACCEL_Z => accel_z_in,
-            ACCEL_TMP => accel_temp_in,
-            Data_Ready => accel_ready_in,
+            accel_x => accel_x_in,
+            accel_y => accel_y_in,
+            accel_z => accel_z_in,
+            accel_temp => accel_temp_in,
+            accel_ready => accel_ready_in,
             --SPI Interface Signals
             sclk => sclk,
             mosi => mosi,

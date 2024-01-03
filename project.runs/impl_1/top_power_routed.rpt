@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Mon Jan  1 21:19:10 2024
+| Date             : Wed Jan  3 09:05:33 2024
 | Host             : DESKTOP-NTKOJC8 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.229        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.132        |
+| Dynamic (W)              | 0.131        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
@@ -52,17 +52,17 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.002 |        8 |       --- |             --- |
-| Slice Logic             |     0.002 |     1163 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      619 |     63400 |            0.98 |
-|   CARRY4                |    <0.001 |       65 |     15850 |            0.41 |
-|   Register              |    <0.001 |      327 |    126800 |            0.26 |
-|   F7/F8 Muxes           |    <0.001 |        7 |     63400 |            0.01 |
+| Clocks                  |     0.003 |        8 |       --- |             --- |
+| Slice Logic             |     0.002 |     1169 |       --- |             --- |
+|   LUT as Logic          |     0.001 |      637 |     63400 |            1.00 |
+|   CARRY4                |    <0.001 |       67 |     15850 |            0.42 |
+|   Register              |    <0.001 |      316 |    126800 |            0.25 |
+|   F7/F8 Muxes           |    <0.001 |        8 |     63400 |            0.01 |
 |   LUT as Shift Register |    <0.001 |        6 |     19000 |            0.03 |
 |   Others                |     0.000 |       12 |       --- |             --- |
-| Signals                 |     0.001 |      883 |       --- |             --- |
+| Signals                 |     0.001 |      870 |       --- |             --- |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
-| I/O                     |     0.003 |       20 |       210 |            9.52 |
+| I/O                     |     0.002 |       20 |       210 |            9.52 |
 | Static Power            |     0.097 |          |           |                 |
 | Total                   |     0.229 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
@@ -148,9 +148,9 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| top             |     0.132 |
+| top             |     0.131 |
 |   accelerometer |     0.003 |
-|     adxl        |     0.002 |
+|     adxl        |     0.003 |
 |   clk108        |     0.124 |
 |     inst        |     0.124 |
 |   spaceship     |     0.001 |

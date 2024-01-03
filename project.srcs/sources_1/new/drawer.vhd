@@ -61,7 +61,7 @@ begin
     begin
         if rising_edge(clock) then
             if display_spaceship = '1' then
-                if address = 1088 then -- number of pixels in spaceship image is 1089
+                if row = spaceship_pos_y - 16 and column = spaceship_pos_x - 16 then
                     address <= 0;
                 else
                     address <= address + 1;
