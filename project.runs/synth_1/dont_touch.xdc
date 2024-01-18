@@ -6,10 +6,10 @@
 # IP: ip/ClkGen/ClkGen.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==ClkGen || ORIG_REF_NAME==ClkGen} -quiet] -quiet
 
-# XDC: c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc
+# XDC: c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc
 set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==ClkGen || ORIG_REF_NAME==ClkGen} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# XDC: c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc
+# XDC: c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==ClkGen || ORIG_REF_NAME==ClkGen} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# XDC: c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_ooc.xdc
+# XDC: c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_ooc.xdc

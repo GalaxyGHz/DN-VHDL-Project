@@ -58,14 +58,15 @@ begin
 
 
     uut: entity work.top(Behavioral)
-        port map( CLK100MHZ => clock,
-                 CPU_RESETN => reset,
-                 VGA_HS =>  hs,
-                 VGA_VS =>  vs,
-                 VGA_R => r,
-                 VGA_G => g,
-                 VGA_B =>  b
-                );
+        port map ( 
+            CLK100MHZ => clock,
+            CPU_RESETN => reset,
+            VGA_HS =>  hs,
+            VGA_VS =>  vs,
+            VGA_R => r,
+            VGA_G => g,
+            VGA_B =>  b 
+        );
 
 
     stimuli: process

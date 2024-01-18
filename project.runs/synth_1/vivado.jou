@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Mon Jan  1 21:17:21 2024
-# Process ID: 23464
-# Current directory: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1
+# Start of session at: Thu Jan 18 10:45:49 2024
+# Process ID: 23180
+# Current directory: C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.vds
-# Journal file: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1\vivado.jou
-# Running On: DESKTOP-NTKOJC8, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16558 MB
+# Log file: C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/top.vds
+# Journal file: C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1\vivado.jou
+# Running On: LAPTOP-HLQDUBUP, OS: Windows, CPU Frequency: 1896 MHz, CPU Physical cores: 16, Host memory: 14877 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

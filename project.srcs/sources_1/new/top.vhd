@@ -1,28 +1,40 @@
 ------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 use IEEE.NUMERIC_STD.ALL;
 
 entity top is
     Port (
-        CLK100MHZ          : in  std_logic;
-        CPU_RESETN         : in  std_logic;
+        CLK100MHZ  : in  std_logic;
+        CPU_RESETN : in  std_logic;
         -- VGA connections
-        VGA_HS       : out std_logic;
-        VGA_VS       : out std_logic;
-        VGA_R      : out std_logic_vector(3 downto 0);
+        VGA_HS   : out std_logic;
+        VGA_VS   : out std_logic;
+        VGA_R    : out std_logic_vector(3 downto 0);
         VGA_G    : out std_logic_vector(3 downto 0);
-        VGA_B     : out std_logic_vector(3 downto 0);
+        VGA_B    : out std_logic_vector(3 downto 0);
         -- SPI connections for accelerometer
         ACL_MISO : in std_logic;
         ACL_MOSI : out std_logic;
         ACL_SCLK : out std_logic;
-        ACL_SS : out std_logic
+        ACL_SS   : out std_logic;
+        -- 7 segment display
+        AN  : out unsigned(7 downto 0);
+        SEG : out unsigned(7 downto 0);
+        -- Switches and LEDs
+        SW : in std_logic_vector(3 downto 0);
+        LED : out std_logic_vector(15 downto 0);
+        -- Omnidirectional microphone
+        M_DATA  : in std_logic;
+        M_CLK   : out std_logic;
+        M_LRSEL : out std_logic
     );
 end top;
 
 architecture Behavioral of top is
+
+    -- Active-high reset
+    signal CPU_RESET : std_logic;
 
     -- Clock used for vga 1280x1024
     signal CLK108MHZ : std_logic;
@@ -43,6 +55,8 @@ architecture Behavioral of top is
 
 begin
 
+    CPU_RESET <= not CPU_RESETN;
+
     -- Clock generator (108MHZ)
     clk108: entity work.ClkGen(Behavioral)
         port map (
@@ -54,7 +68,7 @@ begin
     VGA: entity work.VGA(Behavioral)
         port map (
             clk108mhz => CLK108MHZ,
-            reset => not CPU_RESETN,
+            reset => CPU_RESET,
             vga_hs => VGA_HS,
             vga_vs => VGA_VS,
             column => COLUMN,
@@ -66,7 +80,7 @@ begin
     accelerometer: entity work.accelerometer(Behavioral)
         port map (
             clk108mhz => CLK108MHZ,
-            reset => not CPU_RESETN,
+            reset => CPU_RESET,
             -- Accelerometer data signals
             accel_x => ACCEL_X,
             accel_y => ACCEL_Y,
@@ -82,7 +96,7 @@ begin
     spaceship: entity work.spaceship(Behavioral)
         port map (
             clk108mhz => CLK108MHZ,
-            reset => not CPU_RESETN,
+            reset => CPU_RESET,
             accel_x => ACCEL_X,
             accel_y => ACCEL_Y,
             accel_ready => ACCEL_READY,
@@ -93,15 +107,36 @@ begin
     -- Drawing logic
     drawer: entity work.drawer(Behavioral)
         port map (
-        clock => CLK108MHZ,
-           display_area => DISPLAY_AREA,
-           column => COLUMN, 
-           row => ROW,
-           spaceship_pos_x => SPACESHIP_POS_X,
-           spaceship_pos_y => SPACESHIP_POS_Y,
-           vga_r => VGA_R,
-           vga_g => VGA_G,
-           vga_b => VGA_B
+            clock => CLK108MHZ,
+            display_area => DISPLAY_AREA,
+            column => COLUMN, 
+            row => ROW,
+            spaceship_pos_x => SPACESHIP_POS_X,
+            spaceship_pos_y => SPACESHIP_POS_Y,
+            vga_r => VGA_R,
+            vga_g => VGA_G,
+            vga_b => VGA_B
+        );
+        
+    -- (Pseudo-) random number generator from microphone
+    random: entity work.random(Behavioral)
+        port map (
+            clock => CLK108MHZ,
+            reset => CPU_RESET,
+            SW => SW,
+            LED => LED,
+            M_DATA  => M_DATA,
+            M_CLK   => M_CLK,
+            M_LRSEL => M_LRSEL
+        );
+    
+    score: entity work.score(Behavioral)
+        port map (
+            clock => CLK108MHZ,
+            reset => CPU_RESET,
+            star  => '0',   -- ko se pobere zvezda, je ta signal aktiven, da se vec pristeje
+            AN    => AN,
+            SEG   => SEG
         );
 
 end Behavioral;

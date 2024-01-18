@@ -6,9 +6,8 @@ use IEEE.NUMERIC_STD.ALL;
 use IEEE.std_logic_signed.all;
 
 entity accelerometer is
-    port
-(
-        clk108mhz     : in STD_LOGIC; -- System Clock
+    port (
+        clk108mhz  : in STD_LOGIC; -- System Clock
         reset      : in STD_LOGIC;
         -- Accelerometer data signals
         accel_x    : out STD_LOGIC_VECTOR (9 downto 0);

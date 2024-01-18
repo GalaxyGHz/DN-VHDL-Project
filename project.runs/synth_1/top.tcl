@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.tcl"
+  variable script "C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,9 +70,12 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
-set_param chipscope.maxJobs 4
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/anony/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6836-LAPTOP-HLQDUBUP/incrSyn
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -80,31 +83,39 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.xpr} [current_project]
+set_property webtalk.parent_dir C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.cache/wt [current_project]
+set_property parent.project_path C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo {c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.cache/ip} [current_project]
+set_property ip_output_repo c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/hsync.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/vsync.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/VGA.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/accelerometer.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceshipROM.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/drawer.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceship.vhd}
-  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd}
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/SPI_If.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/hsync.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/vsync.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/accelerometer.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/random.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/top.vhd
 }
-read_ip -quiet {{C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/ip/ClkGen/ClkGen.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_ooc.xdc}}]
+read_ip -quiet C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/ip/ClkGen/ClkGen.xci
+set_property used_in_implementation false [get_files -all c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -115,14 +126,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc}}]
+read_xdc C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc
+set_property used_in_implementation false [get_files C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp}
+read_checkpoint -auto_incremental -incremental C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

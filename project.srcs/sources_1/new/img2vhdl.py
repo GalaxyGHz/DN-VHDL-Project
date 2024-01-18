@@ -45,4 +45,4 @@ def make(name):
     im = imageio.imread(name)
     write_it(name, im)
 
-make("spaceshipBRAM.bmp")
+make("asteroidBRAM.bmp")

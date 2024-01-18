@@ -14,8 +14,8 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp}
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top -part xc7a100tcsg324-1
 Starting synth_design
@@ -26,19 +26,16 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 36092
+INFO: [Synth 8-7075] Helper process launched with PID 3588
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1362.363 ; gain = 440.773
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1325.004 ; gain = 440.879
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-9112] actual for formal port 'reset' is neither a static name nor a globally static expression [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:57]
-WARNING: [Synth 8-9112] actual for formal port 'reset' is neither a static name nor a globally static expression [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:69]
-WARNING: [Synth 8-9112] actual for formal port 'reset' is neither a static name nor a globally static expression [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:85]
-INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:25]
-INFO: [Synth 8-6157] synthesizing module 'ClkGen' [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
-INFO: [Synth 8-6157] synthesizing module 'ClkGen_clk_wiz' [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_clk_wiz.v:65]
-INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:73631]
-INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:73631]
-INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:82174]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/top.vhd:34]
+INFO: [Synth 8-6157] synthesizing module 'ClkGen' [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
+INFO: [Synth 8-6157] synthesizing module 'ClkGen_clk_wiz' [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_clk_wiz.v:65]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:73631]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:73631]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:82174]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT_F bound to: 10.125000 - type: double 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
@@ -52,100 +49,129 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2023.2/s
 	Parameter COMPENSATION bound to: ZHOLD - type: string 
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:82174]
-INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
-INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
-INFO: [Synth 8-6155] done synthesizing module 'ClkGen_clk_wiz' (0#1) [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_clk_wiz.v:65]
-INFO: [Synth 8-6155] done synthesizing module 'ClkGen' (0#1) [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
-INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/VGA.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'hsync' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/hsync.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'hsync' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/hsync.vhd:15]
-INFO: [Synth 8-638] synthesizing module 'vsync' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/vsync.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'vsync' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/vsync.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'VGA' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/VGA.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'accelerometer' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/accelerometer.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:117]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:82174]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
+INFO: [Synth 8-6155] done synthesizing module 'ClkGen_clk_wiz' (0#1) [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_clk_wiz.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'ClkGen' (0#1) [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
+INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'hsync' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/hsync.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'hsync' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/hsync.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'vsync' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/vsync.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'vsync' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/vsync.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'VGA' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'accelerometer' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/accelerometer.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:117]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
 	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
-INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:373]
-INFO: [Synth 8-638] synthesizing module 'SPI_If' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:66]
+INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:373]
+INFO: [Synth 8-638] synthesizing module 'SPI_If' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:66]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
 	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'SPI_If' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:66]
-INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:117]
-INFO: [Synth 8-256] done synthesizing module 'accelerometer' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/accelerometer.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'spaceship' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceship.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'spaceship' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceship.vhd:21]
-INFO: [Synth 8-638] synthesizing module 'drawer' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/drawer.vhd:20]
-INFO: [Synth 8-638] synthesizing module 'spaceshipROM' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceshipROM.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'spaceshipROM' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceshipROM.vhd:14]
-WARNING: [Synth 8-614] signal 'display_spaceship' is read in the process but is not in the sensitivity list [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/drawer.vhd:42]
-WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/drawer.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'drawer' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/drawer.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'SPI_If' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:117]
+INFO: [Synth 8-256] done synthesizing module 'accelerometer' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/accelerometer.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'spaceship' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'spaceship' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'drawer' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'spaceshipROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'spaceshipROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'asteroidROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'asteroidROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'starROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'starROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'drawer' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'random' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/random.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'microphone' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'prescaler' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+	Parameter max_period bound to: 54 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'prescaler' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'prescaler__parameterized0' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+	Parameter max_period bound to: 10000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'prescaler__parameterized0' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'microphone' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'random' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/random.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'score' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'prescaler__parameterized1' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+	Parameter max_period bound to: 54000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'prescaler__parameterized1' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd:25]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'counter' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'seg_display' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd:24]
+	Parameter refresh_period bound to: 1600000 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'prescaler__parameterized2' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+	Parameter max_period bound to: 200000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'prescaler__parameterized2' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'seg_display' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'score' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/top.vhd:34]
+WARNING: [Synth 8-7129] Port star in module score is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module starROM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM is either unconnected or has no load
 WARNING: [Synth 8-7129] Port clock in module spaceshipROM is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1479.383 ; gain = 557.793
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1453.480 ; gain = 569.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1479.383 ; gain = 557.793
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1453.480 ; gain = 569.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1479.383 ; gain = 557.793
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1453.480 ; gain = 569.355
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1486.590 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1453.480 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc] for cell 'clk108/inst'
-Finished Parsing XDC File [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc] for cell 'clk108/inst'
-Parsing XDC File [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc] for cell 'clk108/inst'
-Finished Parsing XDC File [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc] for cell 'clk108/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc] for cell 'clk108/inst'
+Finished Parsing XDC File [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_board.xdc] for cell 'clk108/inst'
+Parsing XDC File [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc] for cell 'clk108/inst'
+Finished Parsing XDC File [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc] for cell 'clk108/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Parsing XDC File [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
-Finished Parsing XDC File [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1589.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1559.793 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1589.832 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1559.793 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for clk108/inst. (constraint file  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/dont_touch.xdc}, line 10).
+Applied set_property KEEP_HIERARCHY = SOFT for clk108/inst. (constraint file  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property KEEP_HIERARCHY = SOFT for clk108. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'StC_reg' in module 'SPI_If'
 INFO: [Synth 8-802] inferred FSM for state register 'StC_Spi_SendRec_reg' in module 'ADXL362Ctrl'
@@ -197,53 +223,63 @@ stadxlwaitsampleratetick |                             0100 |                   
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'StC_Adxl_Ctrl_reg' using encoding 'sequential' in module 'ADXL362Ctrl'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   13 Bit       Adders := 4     
-	   2 Input   12 Bit       Adders := 3     
+	   2 Input   26 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   18 Bit       Adders := 1     
+	   2 Input   13 Bit       Adders := 5     
+	   2 Input   12 Bit       Adders := 4     
 	   2 Input   11 Bit       Adders := 13    
 	   2 Input   10 Bit       Adders := 4     
-	   2 Input    6 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 2     
 	   2 Input    3 Bit       Adders := 2     
 	   2 Input    2 Bit       Adders := 2     
 +---Registers : 
-	               13 Bit    Registers := 2     
-	               12 Bit    Registers := 4     
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 3     
+	               12 Bit    Registers := 5     
 	               11 Bit    Registers := 7     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 15    
-	                6 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	                8 Bit    Registers := 16    
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 5     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 8     
+	                1 Bit    Registers := 14    
 +---Muxes : 
-	   2 Input   13 Bit        Muxes := 2     
+	   5 Input   24 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 3     
+	   2 Input   13 Bit        Muxes := 3     
 	   9 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 4     
 	   2 Input   11 Bit        Muxes := 8     
 	   2 Input   10 Bit        Muxes := 6     
 	   5 Input   10 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 4     
 	   5 Input    8 Bit        Muxes := 2     
+	  17 Input    8 Bit        Muxes := 1     
 	   7 Input    7 Bit        Muxes := 1     
 	   4 Input    7 Bit        Muxes := 1     
 	   4 Input    6 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 9     
 	   9 Input    4 Bit        Muxes := 1     
+	   8 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 8     
 	   7 Input    3 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 1     
+	   9 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 27    
+	   2 Input    1 Bit        Muxes := 33    
 	   4 Input    1 Bit        Muxes := 1     
 	   7 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
@@ -264,9 +300,12 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-6040] Register address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register spaceship_ROM_address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register asteroid_ROM_address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register star_ROM_address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-7129] Port star in module score is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -277,6 +316,10 @@ ROM: Preliminary Mapping Report
 |Module Name  | RTL Object | Depth x Width | Implemented As | 
 +-------------+------------+---------------+----------------+
 |spaceshipROM | ROM        | 2048x11       | LUT            | 
+|asteroidROM  | ROM        | 4096x12       | LUT            | 
+|starROM      | ROM        | 8192x2        | LUT            | 
+|drawer       | p_0_out    | 8192x2        | LUT            | 
+|drawer       | p_0_out    | 4096x12       | LUT            | 
 |drawer       | p_0_out    | 2048x11       | LUT            | 
 +-------------+------------+---------------+----------------+
 
@@ -287,19 +330,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -317,37 +360,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -379,45 +422,45 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |    65|
-|3     |LUT1       |    71|
-|4     |LUT2       |   146|
-|5     |LUT3       |    70|
-|6     |LUT4       |    80|
-|7     |LUT5       |   115|
-|8     |LUT6       |   262|
+|2     |CARRY4     |   111|
+|3     |LUT1       |    79|
+|4     |LUT2       |   212|
+|5     |LUT3       |    77|
+|6     |LUT4       |   168|
+|7     |LUT5       |   163|
+|8     |LUT6       |   976|
 |9     |MMCME2_ADV |     1|
-|10    |MUXF7      |     7|
-|11    |SRL16E     |     8|
-|12    |FDRE       |   312|
-|13    |FDSE       |    15|
-|14    |IBUF       |     3|
-|15    |OBUF       |    17|
+|10    |MUXF7      |   286|
+|11    |MUXF8      |   100|
+|12    |SRL16E     |     8|
+|13    |FDRE       |   533|
+|14    |FDSE       |    21|
+|15    |IBUF       |     8|
+|16    |OBUF       |    51|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 1589.832 ; gain = 557.793
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.832 ; gain = 668.242
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 1559.793 ; gain = 569.355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1559.793 ; gain = 675.668
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1589.832 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1559.793 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 498 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1589.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1559.793 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Synth Design complete | Checksum: 80f013
+Synth Design complete | Checksum: 90642511
 INFO: [Common 17-83] Releasing license: Synthesis
-66 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+88 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1589.832 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1559.793 ; gain = 1083.090
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1559.793 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jan  1 21:18:04 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 18 10:46:45 2024...
