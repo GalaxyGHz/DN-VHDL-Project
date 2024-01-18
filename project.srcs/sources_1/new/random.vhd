@@ -17,7 +17,9 @@ entity random is
         
         M_DATA  : in std_logic;
         M_CLK   : out std_logic;
-        M_LRSEL : out std_logic
+        M_LRSEL : out std_logic;
+        
+        value : out unsigned (31 downto 0)
     );
 end entity;
 
@@ -28,7 +30,6 @@ architecture Behavioral of random is
     constant display_refresh_period : positive := 16e5; -- 16ms na 8 LEDic = frekvenca ~16Hz
     
     -- signali
-    signal value : unsigned(31 downto 0);
 
 begin
     

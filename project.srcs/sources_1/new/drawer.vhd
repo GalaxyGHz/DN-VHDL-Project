@@ -7,14 +7,18 @@ use IEEE.NUMERIC_STD.ALL;
 entity drawer is
     Port (
         clock : in std_logic;
-        display_area : in STD_LOGIC;
+        reset : in std_logic;
+        display_area : in std_logic;
+        rand_value : in unsigned (31 downto 0);
         column : in natural range 0 to 1279;
         row    : in natural range 0 to 1023;
         spaceship_pos_x : in natural range 0 to 1279;
         spaceship_pos_y : in natural range 0 to 1023;
         vga_r : out STD_LOGIC_VECTOR (3 downto 0);
         vga_g : out STD_LOGIC_VECTOR (3 downto 0);
-        vga_b : out STD_LOGIC_VECTOR (3 downto 0));
+        vga_b : out STD_LOGIC_VECTOR (3 downto 0);
+        star  : out std_logic
+    );
 end drawer;
 
 architecture Behavioral of drawer is
@@ -34,16 +38,17 @@ architecture Behavioral of drawer is
     signal display_star : std_logic;
     signal star_ROM_address : integer range 0 to 8000;
     signal star_data : std_logic_vector(11 downto 0);
-    signal star_pos_x : natural range 0 to 1279;
-    signal star_pos_y : natural range 0 to 1023;
+    signal star_pos_x : natural range 0 to 1279 := 500;
+    signal star_pos_y : natural range 0 to 1023 := 800;
 
 begin
 
-    star_pos_x <= 500;
-    star_pos_y <= 800;
-    
+    -- TEMP STATIONARY POSITIONS
+--    star_pos_x <= 500;
+--    star_pos_y <= 800;
     asteroid_pos_x <= 1000;
     asteroid_pos_y <= 250;
+    
     
     -- Do we draw the spaceship
     display_spaceship <= '1' when display_area='1' 
@@ -70,8 +75,8 @@ begin
                             else '0';
     
     data <= spaceship_data when display_spaceship = '1' else
-            asteroid_data  when display_asteroid  = '1' else
             star_data      when display_star      = '1' else
+            asteroid_data  when display_asteroid  = '1' else
             "000011110000"; -- zelena barva za debug
 
     -- Images are stored here
@@ -115,6 +120,45 @@ begin
                 vga_r <= "0000";
                 vga_g <= "0000";
                 vga_b <= "0000";
+            end if;
+        end if;
+    end process;
+    
+    game_logic: process (clock)
+    begin
+        if rising_edge(clock) then
+            if reset = '1' then
+                star_pos_x <= 500;
+                star_pos_y <= 800;
+                star <= '0';
+            elsif display_spaceship = '1' and display_star = '1' then
+                star <= '1';
+                
+                -- move star randomly
+                -- x:  0..1280    1280 - 2*(43 + 3) = 1280 - 92 = 1188
+                -- y:  0..1024    1024 - 2*(43 + 3) = 1024 - 92 = 
+                -- star is 85x85 pixels, so it must be 43 + 3 from the edges
+                
+--                star_pos_x <= TO_INTEGER(rand_value(10 downto 0) mod 1188 + 46);
+--                star_pos_y <= TO_INTEGER(rand_value(20 downto 11) mod 932 + 46);
+                
+                -- generate new x
+                star_pos_x <= TO_INTEGER(rand_value(10 downto 0));
+                if star_pos_x < 46 then
+                    star_pos_x <= star_pos_x + 46;
+                elsif star_pos_x > 1234 then
+                    star_pos_x <= star_pos_x - 1234 + 46;
+                end if;
+                
+                -- generate new y
+                star_pos_y <= TO_INTEGER(rand_value(20 downto 11));
+                if star_pos_y < 46 then
+                    star_pos_y <= star_pos_y + 46;
+                elsif star_pos_y > 978 then
+                    star_pos_y <= star_pos_y - 978 + 46;
+                end if;
+            else 
+                star <= '0';
             end if;
         end if;
     end process;

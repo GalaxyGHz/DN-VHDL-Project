@@ -52,6 +52,12 @@ architecture Behavioral of top is
     -- Spaceship position
     signal SPACESHIP_POS_X : natural range 0 to 1279;
     signal SPACESHIP_POS_Y : natural range 0 to 1023;
+    
+    -- Random 32 bits from microphone
+    signal rand_value : unsigned (31 downto 0);
+    
+    -- Star collected
+    signal star : std_logic;
 
 begin
 
@@ -108,14 +114,17 @@ begin
     drawer: entity work.drawer(Behavioral)
         port map (
             clock => CLK108MHZ,
+            reset => CPU_RESET,
             display_area => DISPLAY_AREA,
+            rand_value => rand_value,
             column => COLUMN, 
             row => ROW,
             spaceship_pos_x => SPACESHIP_POS_X,
             spaceship_pos_y => SPACESHIP_POS_Y,
             vga_r => VGA_R,
             vga_g => VGA_G,
-            vga_b => VGA_B
+            vga_b => VGA_B,
+            star => star
         );
         
     -- (Pseudo-) random number generator from microphone
@@ -127,14 +136,15 @@ begin
             LED => LED,
             M_DATA  => M_DATA,
             M_CLK   => M_CLK,
-            M_LRSEL => M_LRSEL
+            M_LRSEL => M_LRSEL,
+            value => rand_value
         );
     
     score: entity work.score(Behavioral)
         port map (
             clock => CLK108MHZ,
             reset => CPU_RESET,
-            star  => '0',   -- ko se pobere zvezda, je ta signal aktiven, da se vec pristeje
+            star  => star,   -- ko se pobere zvezda, je ta signal aktiven, da se vec pristeje
             AN    => AN,
             SEG   => SEG
         );

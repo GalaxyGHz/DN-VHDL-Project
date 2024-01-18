@@ -55,6 +55,7 @@ begin
         clock_enable => CE,
         count_up     => '1',
         count_down   => '0',
+        star         => star,
         value        => counter_value
     );
     

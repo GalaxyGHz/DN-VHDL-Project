@@ -17,6 +17,7 @@ entity counter is
         clock_enable : in std_logic;
         count_up     : in std_logic;
         count_down   : in std_logic;
+        star         : in std_logic;
         value        : out unsigned(n-1 downto 0)
     );
 end entity;
@@ -25,6 +26,7 @@ end entity;
 architecture Behavioral of counter is
 
     signal count : unsigned(n-1 downto 0) := (others => '0');
+    signal star_old : std_logic := '0';
 
 begin
 
@@ -37,6 +39,13 @@ begin
                 count <= (others => '0');
             else
                 if clock_enable = '1' then
+                    -- add value for star
+                    if star = '1' and star_old = '0' then
+                        count <= count + 32000;
+                    end if;
+                    star_old <= star;
+                    
+                    -- increment or decrement
                     if count_up='1' and count_down='0' then
                         count <= count + 1;
                     elsif count_up='0' and count_down='1' then

@@ -32,20 +32,20 @@ architecture Behavioral of microphone is
     signal sampler_period : positive;
     signal sampler_en : std_logic;
     
-    signal index : unsigned(3 downto 0) := (others => '0'); -- 4bit -> 16 vrednosti
-    signal bits : std_logic_vector(15 downto 0) := (others => '0');
---    signal index : unsigned(4 downto 0) := (others => '0');   -- 5bit -> 32 vrednosti
---    signal bits : std_logic_vector(31 downto 0) := (others => '0');
+--    signal index : unsigned(3 downto 0) := (others => '0'); -- 4bit -> 16 vrednosti
+--    signal bits : std_logic_vector(15 downto 0) := (others => '0');
+    signal index : unsigned(4 downto 0) := (others => '0');   -- 5bit -> 32 vrednosti
+    signal bits : std_logic_vector(31 downto 0) := (others => '0');
 
 begin
 
     M_CLK <= mic_clk;
     M_LRSEL <= '0';
-    led <= bits;
-    value(31 downto 16) <= (others => '0');
-    value(15 downto 0) <= unsigned(bits);
---    led <= bits(15 downto 0);
---    value <= bits;
+--    led <= bits;
+--    value(31 downto 16) <= (others => '0');
+--    value(15 downto 0) <= unsigned(bits);
+    led <= bits(15 downto 0);
+    value <= UNSIGNED(bits);
     
     -- nastavitev frekvence vzorcenja
     sampler_period <= sampler_max_period / 2  when sw = "0001" else
