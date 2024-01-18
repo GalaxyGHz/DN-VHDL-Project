@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Jan  3 09:03:48 2024
-# Process ID: 31548
+# Start of session at: Thu Jan 18 23:37:21 2024
+# Process ID: 6136
 # Current directory: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.vds
@@ -12,7 +12,7 @@
 # Running On: DESKTOP-NTKOJC8, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16558 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 503.098 ; gain = 219.270
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 503.219 ; gain = 222.086
 Command: read_checkpoint -auto_incremental -incremental {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp}
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,9 +25,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19040
+INFO: [Synth 8-7075] Helper process launched with PID 23092
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1363.000 ; gain = 441.031
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1362.605 ; gain = 441.039
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-9112] actual for formal port 'reset' is neither a static name nor a globally static expression [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:57]
 WARNING: [Synth 8-9112] actual for formal port 'reset' is neither a static name nor a globally static expression [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:69]
@@ -63,15 +63,10 @@ INFO: [Synth 8-638] synthesizing module 'vsync' [C:/Users/Lazar/OneDrive/Desktop
 INFO: [Synth 8-256] done synthesizing module 'vsync' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/new/vsync.vhd:17]
 INFO: [Synth 8-256] done synthesizing module 'VGA' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/VGA.vhd:16]
 INFO: [Synth 8-638] synthesizing module 'accelerometer' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/accelerometer.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'ADXL362Ctrl' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:117]
-	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
-	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
-INFO: [Synth 8-3491] module 'SPI_If' declared at 'C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:42' bound to instance 'SPI_Interface' of component 'SPI_If' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:373]
-INFO: [Synth 8-638] synthesizing module 'SPI_If' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:66]
-	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
-	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'SPI_If' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/SPI_If.vhd:66]
-INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/imports/hdl/ADXL362Ctrl.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'ADXL362' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/ADXL362.vhd:28]
+INFO: [Synth 8-638] synthesizing module 'SPI' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/SPI.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'SPI' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/SPI.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'ADXL362' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/ADXL362.vhd:28]
 INFO: [Synth 8-256] done synthesizing module 'accelerometer' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/accelerometer.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'spaceship' [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceship.vhd:21]
 INFO: [Synth 8-256] done synthesizing module 'spaceship' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/spaceship.vhd:21]
@@ -84,18 +79,18 @@ INFO: [Synth 8-256] done synthesizing module 'drawer' (0#1) [C:/Users/Lazar/OneD
 INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/sources_1/new/top.vhd:25]
 WARNING: [Synth 8-7129] Port clock in module spaceshipROM is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1480.336 ; gain = 558.367
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1479.613 ; gain = 558.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1480.336 ; gain = 558.367
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1479.613 ; gain = 558.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1480.336 ; gain = 558.367
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1479.613 ; gain = 558.047
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1480.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1479.613 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -120,22 +115,22 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1578.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1570.066 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1578.195 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1570.066 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -143,59 +138,59 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for clk108/inst. (constraint file  {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/dont_touch.xdc}, line 10).
 Applied set_property KEEP_HIERARCHY = SOFT for clk108. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'StC_reg' in module 'SPI_If'
-INFO: [Synth 8-802] inferred FSM for state register 'StC_Spi_SendRec_reg' in module 'ADXL362Ctrl'
-INFO: [Synth 8-802] inferred FSM for state register 'StC_Spi_Trans_reg' in module 'ADXL362Ctrl'
-INFO: [Synth 8-802] inferred FSM for state register 'StC_Adxl_Ctrl_reg' in module 'ADXL362Ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SPI'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_sendreceive_reg' in module 'ADXL362'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_transaction_reg' in module 'ADXL362'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_controller_reg' in module 'ADXL362'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                  stidle |                               00 |                         10100000
-               stprepare |                               01 |                         00001001
-                 stshift |                               10 |                         01011011
-                  stdone |                               11 |                         00001110
+              state_idle |                               00 |                           101000
+           state_prepare |                               01 |                           000010
+             state_shift |                               10 |                           010110
+              state_done |                               11 |                           000011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'StC_reg' using encoding 'sequential' in module 'SPI_If'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-        stspisendrecidle |                              000 |                          0000000
-         stspipreparecmd |                              001 |                          1000001
-         stspisendstartw |                              010 |                          0001011
-        stspiwaitondonew |                              011 |                          0000111
-         stspisendstartr |                              100 |                          0001110
-        stspiwaitondoner |                              101 |                          0100100
-        stspisendrecdone |                              110 |                          0010101
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'StC_Spi_SendRec_reg' using encoding 'sequential' in module 'ADXL362Ctrl'
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'SPI'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-          stspitransidle |                              000 |                       0000000000
-     stspiprepandsendcmd |                              001 |                       1111100001
-       stspiwaitondonesr |                              010 |                       0000110011
-     stspiwaitforssinact |                              011 |                       0000000010
-          stspitransdone |                              100 |                       0000001110
+ state_send_receive_idle |                              000 |                            00000
+   state_prepare_command |                              001 |                            01000
+  state_send_start_write |                              010 |                            00001
+state_wait_on_done_write |                              011 |                            10000
+   state_send_start_read |                              100 |                            10001
+ state_wait_on_done_read |                              101 |                            00100
+ state_send_receive_done |                              110 |                            00010
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'StC_Spi_Trans_reg' using encoding 'sequential' in module 'ADXL362Ctrl'
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_sendreceive_reg' using encoding 'sequential' in module 'ADXL362'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-          stadxlctrlidle |                             0000 |                     100100000000
-      stadxlsendresetcmd |                             0001 |                     011001000001
-     stadxlwaitresetdone |                             0010 |                     010000000011
-    stadxlconf_remaining |                             0011 |                     011001000010
-stadxlwaitsampleratetick |                             0100 |                     000100000110
-       stadxlread_status |                             0101 |                     011001000111
-         stadxlread_data |                             0110 |                     011000000101
-      stadxlformatandsum |                             0111 |                     000010101101
-         stadxlread_done |                             1000 |                     000001011111
+  state_transaction_idle |                              000 |                         00000000
+state_prep_and_send_command |                              001 |                         01111100
+state_wait_on_done_sendreceive |                              010 |                         00000110
+state_wait_for_ss_inactive |                              011 |                         10000000
+  state_transaction_done |                              100 |                         00000001
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'StC_Adxl_Ctrl_reg' using encoding 'sequential' in module 'ADXL362Ctrl'
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_transaction_reg' using encoding 'sequential' in module 'ADXL362'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+      state_control_idle |                             0000 |                       0010010000
+state_send_reset_command |                             0001 |                       0001100100
+state_wait_on_done_reset |                             0010 |                       0001000000
+state_configure_remaining |                             0011 |                       1001100100
+state_wait_for_sample_rate_clock_enable |                             0100 |                       0000010000
+       state_read_status |                             0101 |                       0101100100
+         state_read_data |                             0110 |                       0001100000
+    state_format_and_sum |                             0111 |                       0000001010
+     state_read_finished |                             1000 |                       0000000101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_controller_reg' using encoding 'sequential' in module 'ADXL362'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -214,26 +209,29 @@ Detailed RTL Component Info :
 	               13 Bit    Registers := 2     
 	               12 Bit    Registers := 4     
 	               11 Bit    Registers := 7     
-	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 15    
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 16    
 	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 8     
 +---Muxes : 
 	   2 Input   13 Bit        Muxes := 2     
-	   9 Input   12 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 7     
 	   2 Input   10 Bit        Muxes := 6     
-	   5 Input   10 Bit        Muxes := 1     
-	   4 Input    8 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 2     
+	  10 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 3     
+	   6 Input    8 Bit        Muxes := 1     
 	   5 Input    8 Bit        Muxes := 2     
-	   7 Input    7 Bit        Muxes := 1     
 	   4 Input    7 Bit        Muxes := 1     
-	   4 Input    6 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 9     
+	   4 Input    6 Bit        Muxes := 2     
+	   3 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   8 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 10    
 	   9 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 8     
 	   7 Input    3 Bit        Muxes := 1     
@@ -264,7 +262,7 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-6040] Register address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -285,19 +283,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -315,49 +313,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                              | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|top         | accelerometer/adxl/Data_Reg_reg[4][7] | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
-|top         | accelerometer/adxl/Data_Reg_reg[4][6] | 5      | 6     | NO           | NO                 | YES               | 6      | 0       | 
-+------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++------------+--------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | accelerometer/adxl/data_register_reg[4][7] | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
+|top         | accelerometer/adxl/data_register_reg[4][6] | 5      | 6     | NO           | NO                 | YES               | 6      | 0       | 
++------------+--------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -379,41 +377,41 @@ Report Cell Usage:
 |1     |BUFG       |     2|
 |2     |CARRY4     |    67|
 |3     |LUT1       |    71|
-|4     |LUT2       |   143|
-|5     |LUT3       |    71|
-|6     |LUT4       |    74|
-|7     |LUT5       |   117|
-|8     |LUT6       |   282|
+|4     |LUT2       |   152|
+|5     |LUT3       |    70|
+|6     |LUT4       |    78|
+|7     |LUT5       |   141|
+|8     |LUT6       |   283|
 |9     |MMCME2_ADV |     1|
 |10    |MUXF7      |     8|
 |11    |SRL16E     |     8|
-|12    |FDRE       |   301|
-|13    |FDSE       |    15|
+|12    |FDRE       |   318|
+|13    |FDSE       |    17|
 |14    |IBUF       |     3|
 |15    |OBUF       |    17|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 1578.195 ; gain = 558.367
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1578.195 ; gain = 656.227
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 1570.066 ; gain = 558.047
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1570.066 ; gain = 648.500
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1578.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1570.066 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1578.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1570.066 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: f67e0843
+Synth Design complete | Checksum: 47ffe029
 INFO: [Common 17-83] Releasing license: Synthesis
-66 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+65 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1578.195 ; gain = 1061.184
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1578.195 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:44 . Memory (MB): peak = 1570.066 ; gain = 1053.996
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1570.066 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jan  3 09:04:31 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 18 23:38:15 2024...

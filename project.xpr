@@ -101,18 +101,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/hdl/ADXL362Ctrl.vhd">
+      <File Path="$PSRCDIR/sources_1/new/SPI.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vivado_proj/Nexys-A7-100T-OOB.srcs/sources_1/imports/src/hdl/ADXL362Ctrl.vhd"/>
-          <Attr Name="ImportTime" Val="1566979398"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/hdl/SPI_If.vhd">
+      <File Path="$PSRCDIR/sources_1/new/ADXL362.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vivado_proj/Nexys-A7-100T-OOB.srcs/sources_1/imports/src/hdl/SPI_If.vhd"/>
-          <Attr Name="ImportTime" Val="1566979398"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
