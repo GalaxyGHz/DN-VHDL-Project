@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Jan 23 19:19:44 2024
+| Date         : Tue Jan 23 20:21:59 2024
 | Host         : LAPTOP-HLQDUBUP running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    41 |
-|    Minimum number of control sets                        |    41 |
+| Total control sets                                       |    42 |
+|    Minimum number of control sets                        |    42 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   136 |
+| Unused register locations in slices containing registers |   137 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    41 |
+| Total control sets |    42 |
 | >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     4 |
-| >= 6 to < 8        |     7 |
+| >= 6 to < 8        |     6 |
 | >= 8 to < 10       |     6 |
 | >= 10 to < 12      |     5 |
-| >= 12 to < 14      |     2 |
+| >= 12 to < 14      |     4 |
 | >= 14 to < 16      |     0 |
 | >= 16              |    15 |
 +--------------------+-------+
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              27 |           14 |
+| No           | No                    | No                     |              25 |           14 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             160 |           55 |
-| Yes          | No                    | No                     |             121 |           35 |
+| No           | Yes                   | No                     |             166 |           62 |
+| Yes          | No                    | No                     |             124 |           47 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             284 |          104 |
+| Yes          | Yes                   | No                     |             292 |          103 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,47 +73,48 @@ Table of Contents
 +------------------------+--------------------------------------------------+---------------------------------------------------+------------------+----------------+--------------+
 |      Clock Signal      |                   Enable Signal                  |                  Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------+--------------------------------------------------+---------------------------------------------------+------------------+----------------+--------------+
-|  clk108/inst/clk108mhz | VGA/hsync/q_i_2_n_0                              | accelerometer/adxl/spi/SR[0]                      |                1 |              1 |         1.00 |
 |  clk108/inst/clk108mhz | VGA/vsync/q_i_1__0_n_0                           | accelerometer/adxl/spi/SR[0]                      |                1 |              1 |         1.00 |
+|  clk108/inst/clk108mhz | VGA/hsync/q_i_2_n_0                              | accelerometer/adxl/spi/SR[0]                      |                1 |              1 |         1.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/command_regiset[0]_6          | accelerometer/adxl/command_regiset[0][6]_i_1_n_0  |                1 |              4 |         4.00 |
+|  clk108/inst/clk108mhz | spaceship/pos_x[7]_i_1_n_0                       | spaceship/pos_x[10]_i_1_n_0                       |                1 |              4 |         4.00 |
 |  clk108/inst/clk108mhz | accelerometer/adxl/sel                           | accelerometer/adxl/reser_number_of_reads_counter  |                1 |              4 |         4.00 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/command_regiset[0]_3          | accelerometer/adxl/command_regiset[0][6]_i_1_n_0  |                1 |              4 |         4.00 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/command_regiset[1][6]_i_2_n_0 | accelerometer/adxl/command_regiset[1]0_in[7]      |                2 |              5 |         2.50 |
-|  clk108/inst/clk108mhz | spaceship/pos_y                                  |                                                   |                1 |              5 |         5.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/command_regiset[1][6]_i_2_n_0 | accelerometer/adxl/command_regiset[1]0_in[7]      |                1 |              5 |         5.00 |
 |  clk108/inst/clk108mhz |                                                  | microphone/mic_1MHz_clk/count[5]_i_1__1_n_0       |                2 |              6 |         3.00 |
-|  clk108/inst/clk108mhz |                                                  | VGA/hsync/count_reg[0]_0                          |                4 |              6 |         1.50 |
-|  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/spi/counter[5]_i_1_n_0         |                2 |              6 |         3.00 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/command_regiset[2]_2          | accelerometer/adxl/command_regiset[2]_1[7]        |                1 |              6 |         6.00 |
-|  clk108/inst/clk108mhz | score/seven_seg/prescaler/clock_enable_reg_0     | score/seven_seg/anodes11_out                      |                2 |              7 |         3.50 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/command_regiset[2]_7          | accelerometer/adxl/command_regiset[2]_5[7]        |                2 |              6 |         3.00 |
+|  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/spi/counter0                   |                2 |              6 |         3.00 |
+|  clk108/inst/clk108mhz | score/seven_seg/prescaler/clock_enable_reg_0     | score/seven_seg/anodes[7]_i_1_n_0                 |                2 |              7 |         3.50 |
 |  clk108/inst/clk108mhz | accelerometer/adxl/shift_command_register        | accelerometer/adxl/spi/SR[0]                      |                1 |              7 |         7.00 |
-|  clk108/inst/clk108mhz | spaceship/clock_enable                           | spaceship/pos_y[9]_i_1_n_0                        |                3 |              7 |         2.33 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/next_state_transaction        | accelerometer/adxl/spi/SR[0]                      |                2 |              8 |         4.00 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/spi/data_out_enable           |                                                   |                3 |              8 |         2.67 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/spi/E[0]                      | accelerometer/adxl/spi/SR[0]                      |                4 |              8 |         2.00 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/spi/rising_edge_shift         |                                                   |                1 |              8 |         8.00 |
+|  clk108/inst/clk108mhz | spaceship/clock_enable                           | spaceship/pos_y[9]_i_1_n_0                        |                1 |              7 |         7.00 |
 |  clk108/inst/clk108mhz | accelerometer/adxl/spi/mosi_register[7]_i_1_n_0  |                                                   |                2 |              8 |         4.00 |
-|  clk108/inst/clk108mhz | spaceship/clock_enable                           | accelerometer/adxl/spi/SR[0]                      |                3 |              9 |         3.00 |
-|  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/spi/SR[0]                      |                8 |             10 |         1.25 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/next_state_transaction        | accelerometer/adxl/spi/SR[0]                      |                2 |              8 |         4.00 |
+|  clk108/inst/clk108mhz | spaceship/pos_x[7]_i_1_n_0                       |                                                   |                2 |              8 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/spi/E[0]                      | accelerometer/adxl/spi/SR[0]                      |                3 |              8 |         2.67 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/spi/data_out_enable           |                                                   |                2 |              8 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/spi/rising_edge_shift         |                                                   |                1 |              8 |         8.00 |
+|  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/spi/SR[0]                      |                9 |             10 |         1.11 |
 |  clk108/inst/clk108mhz |                                                  | VGA/hsync/count[10]_i_1_n_0                       |                6 |             11 |         1.83 |
-|  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/ss_inactive_count0             |                3 |             11 |         3.67 |
 |  clk108/inst/clk108mhz | VGA/hsync/clock_enable                           | VGA/vsync/count[10]_i_1__0_n_0                    |                4 |             11 |         2.75 |
-|  clk108/inst/clk108mhz | spaceship/display_spaceship                      | spaceship/SR[0]                                   |                4 |             11 |         2.75 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/next_state_controller         | accelerometer/adxl/spi/SR[0]                      |                5 |             13 |         2.60 |
+|  clk108/inst/clk108mhz | spaceship/star_pos_y[9]_i_7_0[0]                 | VGA/vsync/SR[0]                                   |                3 |             11 |         3.67 |
+|  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/ss_inactive_count[10]_i_1_n_0  |                4 |             11 |         2.75 |
+|  clk108/inst/clk108mhz |                                                  | VGA/vsync/count_reg[2]_0                          |                9 |             12 |         1.33 |
 |  clk108/inst/clk108mhz | drawer/display_star                              | drawer/star_ROM_address[12]_i_1_n_0               |                5 |             13 |         2.60 |
+|  clk108/inst/clk108mhz | VGA/vsync/E[0]                                   | VGA/vsync/CPU_RESETN                              |                7 |             13 |         1.86 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/next_state_controller         | accelerometer/adxl/spi/SR[0]                      |                7 |             13 |         1.86 |
 |  clk108/inst/clk108mhz |                                                  | accelerometer/adxl/sample_rate_counter[0]_i_1_n_0 |                5 |             17 |         3.40 |
-|  clk108/inst/clk108mhz |                                                  | score/seven_seg/prescaler/count[0]_i_1__5_n_0     |                5 |             18 |         3.60 |
-|  clk108/inst/clk108mhz | microphone/mic_1MHz_clk/E[0]                     |                                                   |                7 |             21 |         3.00 |
-|  clk108/inst/clk108mhz | spaceship/E[0]                                   | accelerometer/adxl/spi/SR[0]                      |               10 |             21 |         2.10 |
-|  clk108/inst/clk108mhz |                                                  | spaceship/count[0]_i_1__6_n_0                     |                6 |             21 |         3.50 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/delaying_data_ready           | accelerometer/adxl/spi/SR[0]                      |               10 |             24 |         2.40 |
-|  clk108/inst/clk108mhz | VGA/hsync/display_asteroid                       | VGA/vsync/count_reg[0]_0                          |                9 |             26 |         2.89 |
-|  clk108/inst/clk108mhz |                                                  | score/prescaler/count[0]_i_1__3_n_0               |                7 |             27 |         3.86 |
-|  clk108/inst/clk108mhz |                                                  | microphone/sampler/count[0]_i_1__1_n_0            |                7 |             27 |         3.86 |
-|  clk108/inst/clk108mhz |                                                  |                                                   |               14 |             27 |         1.93 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/sel                           | accelerometer/adxl/accel_x_sum0                   |                8 |             32 |         4.00 |
-|  clk108/inst/clk108mhz | score/prescaler/sel                              | drawer/clear                                      |                8 |             32 |         4.00 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/E[0]                          | accelerometer/adxl/spi/SR[0]                      |               19 |             34 |         1.79 |
-|  clk108/inst/clk108mhz | microphone/sampler/E[0]                          |                                                   |               14 |             37 |         2.64 |
-|  clk108/inst/clk108mhz | accelerometer/adxl/spi/shift_data_register       |                                                   |                7 |             42 |         6.00 |
+|  clk108/inst/clk108mhz |                                                  | score/seven_seg/prescaler/count[0]_i_1__3_n_0     |                5 |             18 |         3.60 |
+|  clk108/inst/clk108mhz |                                                  | spaceship/count[0]_i_1__2_n_0                     |                6 |             21 |         3.50 |
+|  clk108/inst/clk108mhz | drawer/star_pos_x0                               | accelerometer/adxl/spi/SR[0]                      |               10 |             21 |         2.10 |
+|  clk108/inst/clk108mhz | microphone/mic_1MHz_clk/E[0]                     |                                                   |                9 |             21 |         2.33 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/delaying_data_ready           | accelerometer/adxl/spi/SR[0]                      |                9 |             24 |         2.67 |
+|  clk108/inst/clk108mhz |                                                  |                                                   |               14 |             25 |         1.79 |
+|  clk108/inst/clk108mhz | VGA/vsync/ROM_address                            | VGA/vsync/CPU_RESETN                              |               10 |             26 |         2.60 |
+|  clk108/inst/clk108mhz |                                                  | microphone/sampler/count[0]_i_1__6_n_0            |                7 |             27 |         3.86 |
+|  clk108/inst/clk108mhz |                                                  | score/prescaler/count[0]_i_1__4_n_0               |                7 |             27 |         3.86 |
+|  clk108/inst/clk108mhz | score/counter/count[0]_i_2_n_0                   | drawer/clear                                      |                8 |             32 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/sel                           | accelerometer/adxl/accel_x_sum[0]_i_1_n_0         |                8 |             32 |         4.00 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/E[0]                          | accelerometer/adxl/spi/SR[0]                      |               15 |             34 |         2.27 |
+|  clk108/inst/clk108mhz | microphone/sampler/E[0]                          |                                                   |               18 |             37 |         2.06 |
+|  clk108/inst/clk108mhz | accelerometer/adxl/spi/shift_data_register       |                                                   |               13 |             42 |         3.23 |
 +------------------------+--------------------------------------------------+---------------------------------------------------+------------------+----------------+--------------+
 
 

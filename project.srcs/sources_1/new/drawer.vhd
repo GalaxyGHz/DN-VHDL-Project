@@ -19,8 +19,6 @@ entity drawer is
         vga_b : out STD_LOGIC_VECTOR (3 downto 0);
         star  : out std_logic;
         collision : out std_logic
-        
---        tmp_segval : out unsigned(31 downto 0)
     );
 end drawer;
 
@@ -39,18 +37,13 @@ architecture Behavioral of drawer is
     signal star_pos_y : natural range 0 to 1023 := 400;
     
     signal display_asteroid : std_logic;
-    signal asteroid_ROM_address : integer range 0 to 4000;
-    signal asteroid_data : std_logic_vector(11 downto 0);
-    signal asteroid_pos_x : natural range 0 to 1279;
-    signal asteroid_pos_y : natural range 0 to 1023;
+    signal display_a1 : std_logic;
+    signal display_a2 : std_logic;
+    signal data_a1    : std_logic_vector(11 downto 0);
+    signal data_a2    : std_logic_vector(11 downto 0);
     
 
 begin
-
-    -- TEMP STATIONARY POSITIONS
-    asteroid_pos_x <= 1000;
-    asteroid_pos_y <= 250;
-    
     
     -- Do we draw the spaceship
     display_spaceship <= '1' when display_area='1' 
@@ -68,34 +61,27 @@ begin
                          and column <= star_pos_x + 42 
                         else '0';
     
-    -- Do we draw the asteroid
-    display_asteroid <= '1' when display_area='1' 
-                             and row >= asteroid_pos_y - 30 
-                             and row <= asteroid_pos_y + 29 
-                             and column >= asteroid_pos_x - 30 
-                             and column <= asteroid_pos_x + 29 
+    -- Do we draw an asteroid (used for collision detection)
+    display_asteroid <= '1' when display_a1 = '1' 
+                              or display_a2 = '1'
                             else '0';
     
+    -- Selecting data to display
     data <= spaceship_data when display_spaceship = '1' else
-            asteroid_data  when display_asteroid  = '1' else
+            data_a1        when display_a1        = '1' else
+            data_a2        when display_a2        = '1' else
             star_data      when display_star      = '1' else
             "000011110000"; -- zelena barva za debug
 
-    -- Images are stored here
+    -- Spaceship image
     spaceshipROM: entity work.spaceshipROM(Behavioral)
         port map (
             clock => clock,
             address => spaceship_ROM_address,
             data => spaceship_data
         );
-        
-    asteroidROM: entity work.asteroidROM(Behavioral)
-        port map (
-            clock => clock,
-            address => asteroid_ROM_address,
-            data => asteroid_data
-        );
     
+    -- Star image
     starROM: entity work.starROM(Behavioral)
         port map (
             clock => clock,
@@ -103,11 +89,44 @@ begin
             data => star_data
         );
     
+    -- Asteroid module
+    a1: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 100,
+            asteroid_pos_y => 200
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a1,
+            data         => data_a1
+        );
+        
+    a2: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 1000,
+            asteroid_pos_y => 800
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a2,
+            data         => data_a2
+        );
+    
     -- Temporary drawing location, used for testing
     draw_objects: process (clock)
     begin
         if rising_edge(clock) then
-            if display_area='1' and (row=0 or row=2 or row=1021 or row=1023 or column=0 or column=2 or column=1279 or column=1277) then
+            if display_area='1' 
+                and (row=0 or row=2 or row=1021 or row=1023 or column=0 or column=2 or column=1279 or column=1277) 
+            then
                 -- White border
                 vga_r <= "1111";
                 vga_g <= "1111";
@@ -134,7 +153,6 @@ begin
                 star_pos_y <= 400;
                 star <= '0';
             else
---            elsif collect = '1' then
                 -- Collect and move the star
                 if display_spaceship = '1' and display_star = '1' then
                     star <= '1';
@@ -168,9 +186,6 @@ begin
                     collision <= '0';
                 end if;
             end if;
-            
---            tmp_segval(31 downto 16) <= TO_UNSIGNED(star_pos_x, 16);
---            tmp_segval(15 downto  0) <= TO_UNSIGNED(star_pos_y, 16);
         end if;
     end process;
 
@@ -179,7 +194,6 @@ begin
         if rising_edge(clock) then
             if display_area = '1' and row = 0 and column = 0 then
                 spaceship_ROM_address <= 0;
-                asteroid_ROM_address <= 0;
                 star_ROM_address <= 0;
             end if;
             
@@ -188,14 +202,6 @@ begin
                     spaceship_ROM_address <= 0;
                 else
                     spaceship_ROM_address <= spaceship_ROM_address + 1;
-                end if;
-            end if;
-            
-            if display_asteroid = '1' then
-                if asteroid_ROM_address = 3599 then -- number of pixels in star image is 3600
-                    asteroid_ROM_address <= 0;
-                else
-                    asteroid_ROM_address <= asteroid_ROM_address + 1;
                 end if;
             end if;
             

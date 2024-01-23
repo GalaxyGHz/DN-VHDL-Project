@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Tue Jan 23 19:20:15 2024
+| Date             : Tue Jan 23 20:22:41 2024
 | Host             : LAPTOP-HLQDUBUP running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.004 |        8 |       --- |             --- |
-| Slice Logic             |     0.002 |     2888 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1543 |     63400 |            2.43 |
-|   CARRY4                |    <0.001 |      119 |     15850 |            0.75 |
-|   Register              |    <0.001 |      592 |    126800 |            0.47 |
-|   F7/F8 Muxes           |    <0.001 |      380 |     63400 |            0.60 |
+| Slice Logic             |     0.002 |     3922 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     2178 |     63400 |            3.44 |
+|   CARRY4                |    <0.001 |      122 |     15850 |            0.77 |
+|   Register              |    <0.001 |      607 |    126800 |            0.48 |
+|   F7/F8 Muxes           |    <0.001 |      751 |     63400 |            1.18 |
 |   LUT as Shift Register |    <0.001 |        6 |     19000 |            0.03 |
-|   Others                |     0.000 |       27 |       --- |             --- |
-| Signals                 |     0.002 |     1660 |       --- |             --- |
+|   Others                |     0.000 |       31 |       --- |             --- |
+| Signals                 |     0.002 |     1962 |       --- |             --- |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
-| I/O                     |     0.009 |       59 |       210 |           28.10 |
+| I/O                     |     0.010 |       59 |       210 |           28.10 |
 | Static Power            |     0.098 |          |           |                 |
 | Total                   |     0.238 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
@@ -149,13 +149,12 @@ Table of Contents
 | Name            | Power (W) |
 +-----------------+-----------+
 | top             |     0.141 |
-|   accelerometer |     0.003 |
-|     adxl        |     0.003 |
+|   accelerometer |     0.002 |
+|     adxl        |     0.002 |
 |   clk108        |     0.124 |
 |     inst        |     0.124 |
 |   drawer        |     0.001 |
 |   microphone    |     0.001 |
-|   score         |     0.001 |
 |   spaceship     |     0.001 |
 +-----------------+-----------+
 

@@ -100,6 +100,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/accelerometer.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd
