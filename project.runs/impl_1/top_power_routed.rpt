@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Tue Jan 23 21:24:50 2024
+| Date             : Tue Jan 23 21:45:46 2024
 | Host             : LAPTOP-HLQDUBUP running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.243        |
+| Total On-Chip Power (W)  | 0.242        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.145        |
+| Dynamic (W)              | 0.144        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.006 |        8 |       --- |             --- |
-| Slice Logic             |     0.003 |     9101 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     5432 |     63400 |            8.57 |
+| Slice Logic             |     0.002 |     8632 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     5552 |     63400 |            8.76 |
 |   CARRY4                |    <0.001 |      134 |     15850 |            0.85 |
-|   Register              |    <0.001 |      718 |    126800 |            0.57 |
-|   F7/F8 Muxes           |    <0.001 |     2493 |     63400 |            3.93 |
+|   Register              |    <0.001 |      663 |    126800 |            0.52 |
+|   F7/F8 Muxes           |    <0.001 |     1986 |     63400 |            3.13 |
 |   LUT as Shift Register |    <0.001 |        6 |     19000 |            0.03 |
 |   Others                |     0.000 |       35 |       --- |             --- |
-| Signals                 |     0.002 |     3652 |       --- |             --- |
+| Signals                 |     0.002 |     4234 |       --- |             --- |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
 | I/O                     |     0.011 |       56 |       210 |           26.67 |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.243 |          |           |                 |
+| Total                   |     0.242 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.011 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.026 |       0.011 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.087 |       0.069 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,15 +148,15 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| top             |     0.145 |
+| top             |     0.144 |
 |   accelerometer |     0.003 |
 |     adxl        |     0.003 |
 |   clk108        |     0.124 |
 |     inst        |     0.124 |
-|   drawer        |     0.003 |
+|   drawer        |     0.002 |
 |   microphone    |     0.001 |
 |   score         |     0.001 |
-|   spaceship     |     0.001 |
+|   spaceship     |     0.002 |
 +-----------------+-----------+
 
 

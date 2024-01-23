@@ -37,6 +37,7 @@ architecture Behavioral of drawer is
     signal star_pos_y : natural range 0 to 1023 := 200;
     
     signal display_asteroid : std_logic;
+    signal asteroid_data : std_logic_vector(11 downto 0);
     signal display_a1 : std_logic;
     signal display_a2 : std_logic;
     signal display_a3 : std_logic;
@@ -81,15 +82,19 @@ begin
                               or display_a7 = '1'
                             else '0';
     
+    asteroid_data <= data_a1 when display_a1 = '1' else
+                     data_a2 when display_a2 = '1' else
+                     data_a3 when display_a3 = '1' else
+                     data_a4 when display_a4 = '1' else
+                     data_a5 when display_a5 = '1' else
+                     data_a6 when display_a6 = '1' else
+                     data_a7 when display_a7 = '1' else
+                     "000000000000";
+    
     -- Selecting data to display
     data <= spaceship_data when display_spaceship = '1' else
-            data_a1        when display_a1        = '1' else
-            data_a2        when display_a2        = '1' else
-            data_a3        when display_a3        = '1' else
-            data_a4        when display_a4        = '1' else
-            data_a5        when display_a5        = '1' else
-            data_a6        when display_a6        = '1' else
-            data_a7        when display_a7        = '1' else
+            star_data      when display_asteroid  = '1' and asteroid_data = "000000000000" else
+            asteroid_data  when display_asteroid  = '1' else
             star_data      when display_star      = '1' else
             "000011110000"; -- Green color for debugging
 
