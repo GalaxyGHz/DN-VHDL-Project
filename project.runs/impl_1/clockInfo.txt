@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2023.2
-| Date         : Tue Jan 23 20:21:52 2024
+| Date         : Tue Jan 23 21:23:50 2024
 | Host         : LAPTOP-HLQDUBUP
 | Design       : design_1
 | Device       : xc7a100t-csg324-1--

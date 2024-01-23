@@ -14,7 +14,6 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 462.633 ; gain = 184.770
 Command: read_checkpoint -auto_incremental -incremental C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,9 +26,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 24524
+INFO: [Synth 8-7075] Helper process launched with PID 9000
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.676 ; gain = 440.586
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1327.051 ; gain = 442.375
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/top.vhd:34]
 INFO: [Synth 8-6157] synthesizing module 'ClkGen' [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
@@ -75,15 +74,35 @@ INFO: [Synth 8-256] done synthesizing module 'spaceshipROM' (0#1) [C:/Users/anon
 INFO: [Synth 8-638] synthesizing module 'starROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'starROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd:14]
 INFO: [Synth 8-638] synthesizing module 'asteroid' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 100 - type: integer 
-	Parameter asteroid_pos_y bound to: 200 - type: integer 
+	Parameter asteroid_pos_x bound to: 240 - type: integer 
+	Parameter asteroid_pos_y bound to: 130 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'asteroidROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'asteroidROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'asteroid' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized0' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 1000 - type: integer 
-	Parameter asteroid_pos_y bound to: 800 - type: integer 
+	Parameter asteroid_pos_x bound to: 1090 - type: integer 
+	Parameter asteroid_pos_y bound to: 190 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized0' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized1' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+	Parameter asteroid_pos_x bound to: 520 - type: integer 
+	Parameter asteroid_pos_y bound to: 370 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized1' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized2' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+	Parameter asteroid_pos_x bound to: 870 - type: integer 
+	Parameter asteroid_pos_y bound to: 520 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized2' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized3' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+	Parameter asteroid_pos_x bound to: 130 - type: integer 
+	Parameter asteroid_pos_y bound to: 600 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized3' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized4' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+	Parameter asteroid_pos_x bound to: 1100 - type: integer 
+	Parameter asteroid_pos_y bound to: 750 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized4' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized5' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+	Parameter asteroid_pos_x bound to: 370 - type: integer 
+	Parameter asteroid_pos_y bound to: 880 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized5' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'drawer' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'microphone' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:27]
 INFO: [Synth 8-638] synthesizing module 'prescaler' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
@@ -120,18 +139,18 @@ WARNING: [Synth 8-7129] Port rand_value[23] in module drawer is either unconnect
 WARNING: [Synth 8-7129] Port rand_value[22] in module drawer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[21] in module drawer is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1455.262 ; gain = 570.172
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1458.629 ; gain = 573.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1455.262 ; gain = 570.172
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1458.629 ; gain = 573.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1455.262 ; gain = 570.172
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1458.629 ; gain = 573.953
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1455.262 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1458.629 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -159,23 +178,23 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1555.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1510.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1555.469 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1510.480 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1510.480 ; gain = 625.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1510.480 ; gain = 625.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -183,7 +202,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for clk108/inst. (constraint file  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property KEEP_HIERARCHY = SOFT for clk108. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1510.480 ; gain = 625.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SPI'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_sendreceive_reg' in module 'ADXL362'
@@ -235,7 +254,7 @@ state_wait_for_sample_rate_clock_enable |                             0100 |    
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_controller_reg' using encoding 'sequential' in module 'ADXL362'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1510.480 ; gain = 625.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -245,7 +264,7 @@ Detailed RTL Component Info :
 	   2 Input   27 Bit       Adders := 2     
 	   2 Input   18 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 5     
-	   2 Input   12 Bit       Adders := 6     
+	   2 Input   12 Bit       Adders := 11    
 	   2 Input   11 Bit       Adders := 18    
 	   2 Input   10 Bit       Adders := 6     
 	   2 Input    6 Bit       Adders := 3     
@@ -256,7 +275,7 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 2     
 	               16 Bit    Registers := 1     
 	               13 Bit    Registers := 3     
-	               12 Bit    Registers := 6     
+	               12 Bit    Registers := 11    
 	               11 Bit    Registers := 8     
 	               10 Bit    Registers := 3     
 	                8 Bit    Registers := 17    
@@ -265,12 +284,12 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 19    
+	                1 Bit    Registers := 24    
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 1     
-	   5 Input   27 Bit        Muxes := 1     
+	   2 Input   27 Bit        Muxes := 1     
 	   2 Input   13 Bit        Muxes := 3     
-	   2 Input   12 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 7     
 	   2 Input   11 Bit        Muxes := 10    
 	   2 Input   10 Bit        Muxes := 8     
 	  10 Input   10 Bit        Muxes := 1     
@@ -294,7 +313,7 @@ Detailed RTL Component Info :
 	   9 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 37    
+	   2 Input    1 Bit        Muxes := 42    
 	   4 Input    1 Bit        Muxes := 1     
 	   7 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
@@ -330,7 +349,7 @@ WARNING: [Synth 8-7129] Port rand_value[23] in module drawer is either unconnect
 WARNING: [Synth 8-7129] Port rand_value[22] in module drawer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[21] in module drawer is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:19 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -343,7 +362,6 @@ ROM: Preliminary Mapping Report
 |spaceshipROM | ROM        | 2048x11       | LUT            | 
 |starROM      | ROM        | 8192x2        | LUT            | 
 |asteroidROM  | ROM        | 4096x12       | LUT            | 
-|spaceshipROM | p_0_out    | 2048x11       | LUT            | 
 +-------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -353,19 +371,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:21 ; elapsed = 00:01:23 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:28 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Technology Mapping : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -383,37 +401,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished IO Insertion : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -445,46 +463,46 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |   122|
-|3     |LUT1       |    76|
-|4     |LUT2       |   253|
-|5     |LUT3       |    88|
-|6     |LUT4       |   138|
-|7     |LUT5       |   236|
-|8     |LUT6       |  1612|
+|2     |CARRY4     |   134|
+|3     |LUT1       |    77|
+|4     |LUT2       |   375|
+|5     |LUT3       |   122|
+|6     |LUT4       |   147|
+|7     |LUT5       |   319|
+|8     |LUT6       |  4674|
 |9     |MMCME2_ADV |     1|
-|10    |MUXF7      |   552|
-|11    |MUXF8      |   199|
+|10    |MUXF7      |  1840|
+|11    |MUXF8      |   653|
 |12    |SRL16E     |     8|
-|13    |FDRE       |   557|
-|14    |FDSE       |    34|
-|15    |IBUF       |     8|
+|13    |FDRE       |   675|
+|14    |FDSE       |    27|
+|15    |IBUF       |     5|
 |16    |OBUF       |    51|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:50 ; elapsed = 00:00:58 . Memory (MB): peak = 1555.469 ; gain = 570.172
-Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 1555.469 ; gain = 670.379
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:29 ; elapsed = 00:01:37 . Memory (MB): peak = 1678.434 ; gain = 741.906
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1678.434 ; gain = 793.758
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1555.469 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 874 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1678.434 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2628 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1555.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1678.434 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Synth Design complete | Checksum: 96968125
+Synth Design complete | Checksum: df842e1f
 INFO: [Common 17-83] Releasing license: Synthesis
-87 Infos, 30 Warnings, 1 Critical Warnings and 0 Errors encountered.
+97 Infos, 30 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1555.469 ; gain = 1079.594
+synth_design: Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 1678.434 ; gain = 1203.211
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1555.469 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1678.434 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 23 20:21:16 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 23 21:23:16 2024...

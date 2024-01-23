@@ -9,7 +9,7 @@ entity drawer is
         clock : in std_logic;
         reset : in std_logic;
         display_area : in std_logic;
-        rand_value : in unsigned (31 downto 0);
+        rand_value   : in unsigned (31 downto 0);
         column : in natural range 0 to 1279;
         row    : in natural range 0 to 1023;
         spaceship_pos_x : in natural range 0 to 1279;
@@ -34,13 +34,23 @@ architecture Behavioral of drawer is
     signal star_ROM_address : integer range 0 to 8000;
     signal star_data : std_logic_vector(11 downto 0);
     signal star_pos_x : natural range 0 to 1279 := 640;
-    signal star_pos_y : natural range 0 to 1023 := 400;
+    signal star_pos_y : natural range 0 to 1023 := 200;
     
     signal display_asteroid : std_logic;
     signal display_a1 : std_logic;
     signal display_a2 : std_logic;
+    signal display_a3 : std_logic;
+    signal display_a4 : std_logic;
+    signal display_a5 : std_logic;
+    signal display_a6 : std_logic;
+    signal display_a7 : std_logic;
     signal data_a1    : std_logic_vector(11 downto 0);
     signal data_a2    : std_logic_vector(11 downto 0);
+    signal data_a3    : std_logic_vector(11 downto 0);
+    signal data_a4    : std_logic_vector(11 downto 0);
+    signal data_a5    : std_logic_vector(11 downto 0);
+    signal data_a6    : std_logic_vector(11 downto 0);
+    signal data_a7    : std_logic_vector(11 downto 0);
     
 
 begin
@@ -64,14 +74,24 @@ begin
     -- Do we draw an asteroid (used for collision detection)
     display_asteroid <= '1' when display_a1 = '1' 
                               or display_a2 = '1'
+                              or display_a3 = '1'
+                              or display_a4 = '1'
+                              or display_a5 = '1'
+                              or display_a6 = '1'
+                              or display_a7 = '1'
                             else '0';
     
     -- Selecting data to display
     data <= spaceship_data when display_spaceship = '1' else
             data_a1        when display_a1        = '1' else
             data_a2        when display_a2        = '1' else
+            data_a3        when display_a3        = '1' else
+            data_a4        when display_a4        = '1' else
+            data_a5        when display_a5        = '1' else
+            data_a6        when display_a6        = '1' else
+            data_a7        when display_a7        = '1' else
             star_data      when display_star      = '1' else
-            "000011110000"; -- zelena barva za debug
+            "000011110000"; -- Green color for debugging
 
     -- Spaceship image
     spaceshipROM: entity work.spaceshipROM(Behavioral)
@@ -89,11 +109,11 @@ begin
             data => star_data
         );
     
-    -- Asteroid module
+    -- Asteroid modules
     a1: entity work.asteroid(Behavioral)
         generic map (
-            asteroid_pos_x => 100,
-            asteroid_pos_y => 200
+            asteroid_pos_x => 240,
+            asteroid_pos_y => 130
         )
         port map (
             clock        => clock,
@@ -107,8 +127,8 @@ begin
         
     a2: entity work.asteroid(Behavioral)
         generic map (
-            asteroid_pos_x => 1000,
-            asteroid_pos_y => 800
+            asteroid_pos_x => 1090,
+            asteroid_pos_y => 190
         )
         port map (
             clock        => clock,
@@ -119,8 +139,83 @@ begin
             valid        => display_a2,
             data         => data_a2
         );
-    
-    -- Temporary drawing location, used for testing
+        
+    a3: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 520,
+            asteroid_pos_y => 370
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a3,
+            data         => data_a3
+        );
+        
+    a4: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 870,
+            asteroid_pos_y => 520
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a4,
+            data         => data_a4
+        );
+        
+    a5: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 130,
+            asteroid_pos_y => 600
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a5,
+            data         => data_a5
+        );
+        
+    a6: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 1100,
+            asteroid_pos_y => 750
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a6,
+            data         => data_a6
+        );
+        
+    a7: entity work.asteroid(Behavioral)
+        generic map (
+            asteroid_pos_x => 370,
+            asteroid_pos_y => 880
+        )
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            valid        => display_a7,
+            data         => data_a7
+        );
+        
+    -- Selecting what to draw
     draw_objects: process (clock)
     begin
         if rising_edge(clock) then
@@ -145,12 +240,13 @@ begin
         end if;
     end process;
     
+    -- Star collection and asteroid collision detection
     game_logic: process (clock)
     begin
         if rising_edge(clock) then
             if reset = '1' then
                 star_pos_x <= 640;
-                star_pos_y <= 400;
+                star_pos_y <= 200;
                 star <= '0';
             else
                 -- Collect and move the star
@@ -189,6 +285,7 @@ begin
         end if;
     end process;
 
+    -- Updating ROM addresses when passing over each drawn pixel
     update_ROM_addresses: process (clock)
     begin
         if rising_edge(clock) then

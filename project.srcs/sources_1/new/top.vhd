@@ -22,7 +22,7 @@ entity top is
         AN  : out unsigned(7 downto 0);
         SEG : out unsigned(7 downto 0);
         -- Switches and LEDs
-        SW : in std_logic_vector(3 downto 0);
+        SW : in std_logic;
         LED : out std_logic_vector(15 downto 0);
         -- Omnidirectional microphone
         M_DATA  : in std_logic;

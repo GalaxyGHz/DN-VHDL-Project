@@ -23,7 +23,7 @@ end score;
 
 architecture Behavioral of score is
 
-    constant max_period  : positive := 108e6; -- 1x na sekundo
+    constant max_period  : positive := 108e6; -- 1 Hz
     constant counter_width  : positive := 32;
     constant display_refresh_period : positive := 16e5; -- 16ms na 8 LEDic = frekvenca ~16Hz
     
@@ -33,7 +33,7 @@ architecture Behavioral of score is
 
 begin
 
-    prescaler_period <= max_period;
+    prescaler_period <= max_period / 2; -- 2 Hz
     
     -- instanciranje modula prescaler
     prescaler : entity work.prescaler

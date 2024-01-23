@@ -12,7 +12,7 @@ entity microphone is
         clock   : in std_logic;
         reset   : in std_logic;
         
-        SW      : in std_logic_vector(3 downto 0);
+        SW      : in std_logic;
         LED     : out std_logic_vector(15 downto 0);
         
         M_DATA  : in std_logic;
@@ -43,11 +43,8 @@ begin
     M_LRSEL <= '0';
     
     -- nastavitev frekvence vzorcenja
-    sampler_period <= sampler_max_period / 2  when sw = "0001" else
-                      sampler_max_period / 4  when sw = "0010" else
-                      sampler_max_period / 8  when sw = "0100" else
-                      sampler_max_period / 16 when sw = "1000" else
-                      sampler_max_period;
+    sampler_period <= sampler_max_period when sw = '1' else
+                      sampler_max_period / 16;
 
     -- instanciranje prescaler modula za 1MHz uro
     mic_1MHz_clk : entity work.prescaler
