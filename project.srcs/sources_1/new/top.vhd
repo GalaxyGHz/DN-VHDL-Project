@@ -22,7 +22,7 @@ entity top is
         AN  : out unsigned(7 downto 0);
         SEG : out unsigned(7 downto 0);
         -- Switches and LEDs
-        SW : in std_logic;
+        SW : in std_logic_vector(1 downto 0);
         LED : out std_logic_vector(15 downto 0);
         -- Omnidirectional microphone
         M_DATA  : in std_logic;
@@ -61,10 +61,6 @@ architecture Behavioral of top is
     
     -- Crashed into asteroid
     signal collision : std_logic;
-    
-    -- tmp debug
---    signal tmp_segval : unsigned (31 downto 0);
---    signal BTNU : std_logic;
 
 begin
 
@@ -117,7 +113,7 @@ begin
             spaceship_pos_y => SPACESHIP_POS_Y
         );
       
-    -- Drawing logic
+    -- Drawing and game logic
     drawer: entity work.drawer(Behavioral)
         port map (
             clock => CLK108MHZ,
@@ -133,7 +129,6 @@ begin
             vga_b => VGA_B,
             star => star,
             collision => collision
---            tmp_segval => tmp_segval
         );
         
     -- (Pseudo-) random number generator from microphone
@@ -149,15 +144,15 @@ begin
             value => rand_value
         );
     
+    -- Score counter
     score: entity work.score(Behavioral)
         port map (
             clock => CLK108MHZ,
             reset => CPU_RESET,
-            star  => star,   -- ko se pobere zvezda, je ta signal aktiven
+            star  => star,
             collision => collision,
             AN    => AN,
             SEG   => SEG
---            tmp_segval => tmp_segval
         );
 
 end Behavioral;

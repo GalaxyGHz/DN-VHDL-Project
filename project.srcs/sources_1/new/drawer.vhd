@@ -14,9 +14,9 @@ entity drawer is
         row    : in natural range 0 to 1023;
         spaceship_pos_x : in natural range 0 to 1279;
         spaceship_pos_y : in natural range 0 to 1023;
-        vga_r : out STD_LOGIC_VECTOR (3 downto 0);
-        vga_g : out STD_LOGIC_VECTOR (3 downto 0);
-        vga_b : out STD_LOGIC_VECTOR (3 downto 0);
+        vga_r : out std_logic_vector (3 downto 0);
+        vga_g : out std_logic_vector (3 downto 0);
+        vga_b : out std_logic_vector (3 downto 0);
         star  : out std_logic;
         collision : out std_logic
     );
@@ -27,17 +27,14 @@ architecture Behavioral of drawer is
     signal data : std_logic_vector(11 downto 0);
     
     signal display_spaceship : std_logic;
-    signal spaceship_ROM_address : integer range 0 to 2000;
     signal spaceship_data : std_logic_vector(11 downto 0);
     
     signal display_star : std_logic;
-    signal star_ROM_address : integer range 0 to 8000;
     signal star_data : std_logic_vector(11 downto 0);
     signal star_pos_x : natural range 0 to 1279 := 640;
     signal star_pos_y : natural range 0 to 1023 := 200;
     
     signal display_asteroid : std_logic;
-    signal asteroid_data : std_logic_vector(11 downto 0);
     signal display_a1 : std_logic;
     signal display_a2 : std_logic;
     signal display_a3 : std_logic;
@@ -56,22 +53,6 @@ architecture Behavioral of drawer is
 
 begin
     
-    -- Do we draw the spaceship
-    display_spaceship <= '1' when display_area='1' 
-                              and row >= spaceship_pos_y - 16 
-                              and row <= spaceship_pos_y + 16 
-                              and column >= spaceship_pos_x - 16 
-                              and column <= spaceship_pos_x + 16 
-                             else '0';
-    
-    -- Do we draw the star
-    display_star <= '1' when display_area='1' 
-                         and row >= star_pos_y - 42 
-                         and row <= star_pos_y + 42 
-                         and column >= star_pos_x - 42 
-                         and column <= star_pos_x + 42 
-                        else '0';
-    
     -- Do we draw an asteroid (used for collision detection)
     display_asteroid <= '1' when display_a1 = '1' 
                               or display_a2 = '1'
@@ -82,140 +63,134 @@ begin
                               or display_a7 = '1'
                             else '0';
     
-    asteroid_data <= data_a1 when display_a1 = '1' else
-                     data_a2 when display_a2 = '1' else
-                     data_a3 when display_a3 = '1' else
-                     data_a4 when display_a4 = '1' else
-                     data_a5 when display_a5 = '1' else
-                     data_a6 when display_a6 = '1' else
-                     data_a7 when display_a7 = '1' else
-                     "000000000000";
-    
     -- Selecting data to display
     data <= spaceship_data when display_spaceship = '1' else
-            star_data      when display_asteroid  = '1' and asteroid_data = "000000000000" else
-            asteroid_data  when display_asteroid  = '1' else
+            data_a1        when display_a1        = '1' else
+            data_a2        when display_a2        = '1' else
+            data_a3        when display_a3        = '1' else
+            data_a4        when display_a4        = '1' else
+            data_a5        when display_a5        = '1' else
+            data_a6        when display_a6        = '1' else
+            data_a7        when display_a7        = '1' else
             star_data      when display_star      = '1' else
             "000011110000"; -- Green color for debugging
-
-    -- Spaceship image
-    spaceshipROM: entity work.spaceshipROM(Behavioral)
-        port map (
-            clock => clock,
-            address => spaceship_ROM_address,
-            data => spaceship_data
-        );
     
-    -- Star image
-    starROM: entity work.starROM(Behavioral)
-        port map (
-            clock => clock,
-            address => star_ROM_address,
-            data => star_data
-        );
-    
-    -- Asteroid modules
-    a1: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 240,
-            asteroid_pos_y => 130
-        )
+    -- Spaceship image module
+    spaceship_obj: entity work.spaceship_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => spaceship_pos_x,
+            pos_y        => spaceship_pos_y,
+            valid        => display_spaceship,
+            data         => spaceship_data
+        );
+    
+    -- Star image module
+    star_obj: entity work.star_obj(Behavioral)
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            pos_x        => star_pos_x,
+            pos_y        => star_pos_y,
+            valid        => display_star,
+            data         => star_data
+        );
+    
+    -- Asteroid image modules (7)
+    a1_obj: entity work.asteroid_obj(Behavioral)
+        port map (
+            clock        => clock,
+            reset        => reset,
+            display_area => display_area,
+            column       => column,
+            row          => row,
+            pos_x        => 240,
+            pos_y        => 130,
             valid        => display_a1,
             data         => data_a1
         );
         
-    a2: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 1090,
-            asteroid_pos_y => 190
-        )
+    a2_obj: entity work.asteroid_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => 1090,
+            pos_y        => 190,
             valid        => display_a2,
             data         => data_a2
         );
         
-    a3: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 520,
-            asteroid_pos_y => 370
-        )
+    a3_obj: entity work.asteroid_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => 520,
+            pos_y        => 370,
             valid        => display_a3,
             data         => data_a3
         );
         
-    a4: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 870,
-            asteroid_pos_y => 520
-        )
+    a4_obj: entity work.asteroid_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => 870,
+            pos_y        => 520,
             valid        => display_a4,
             data         => data_a4
         );
         
-    a5: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 130,
-            asteroid_pos_y => 600
-        )
+    a5_obj: entity work.asteroid_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => 130,
+            pos_y        => 600,
             valid        => display_a5,
             data         => data_a5
         );
         
-    a6: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 1100,
-            asteroid_pos_y => 750
-        )
+    a6_obj: entity work.asteroid_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => 1100,
+            pos_y        => 750,
             valid        => display_a6,
             data         => data_a6
         );
         
-    a7: entity work.asteroid(Behavioral)
-        generic map (
-            asteroid_pos_x => 370,
-            asteroid_pos_y => 880
-        )
+    a7_obj: entity work.asteroid_obj(Behavioral)
         port map (
             clock        => clock,
             reset        => reset,
             display_area => display_area,
             column       => column,
             row          => row,
+            pos_x        => 370,
+            pos_y        => 880,
             valid        => display_a7,
             data         => data_a7
         );
@@ -285,33 +260,6 @@ begin
                     collision <= '1';
                 else
                     collision <= '0';
-                end if;
-            end if;
-        end if;
-    end process;
-
-    -- Updating ROM addresses when passing over each drawn pixel
-    update_ROM_addresses: process (clock)
-    begin
-        if rising_edge(clock) then
-            if display_area = '1' and row = 0 and column = 0 then
-                spaceship_ROM_address <= 0;
-                star_ROM_address <= 0;
-            end if;
-            
-            if display_spaceship = '1' then
-                if spaceship_ROM_address = 1088 then -- number of pixels in spaceship image is 1089
-                    spaceship_ROM_address <= 0;
-                else
-                    spaceship_ROM_address <= spaceship_ROM_address + 1;
-                end if;
-            end if;
-            
-            if display_star = '1' then
-                if star_ROM_address = 7224 then -- number of pixels in star image is 7225
-                    star_ROM_address <= 0;
-                else
-                    star_ROM_address <= star_ROM_address + 1;
                 end if;
             end if;
         end if;

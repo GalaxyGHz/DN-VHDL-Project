@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Tue Jan 23 21:45:46 2024
+| Date             : Tue Jan 23 23:31:51 2024
 | Host             : LAPTOP-HLQDUBUP running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.242        |
+| Total On-Chip Power (W)  | 0.251        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.144        |
+| Dynamic (W)              | 0.153        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.006 |        8 |       --- |             --- |
-| Slice Logic             |     0.002 |     8632 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     5552 |     63400 |            8.76 |
+| Clocks                  |     0.005 |        8 |       --- |             --- |
+| Slice Logic             |     0.003 |     9136 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     5428 |     63400 |            8.56 |
 |   CARRY4                |    <0.001 |      134 |     15850 |            0.85 |
-|   Register              |    <0.001 |      663 |    126800 |            0.52 |
-|   F7/F8 Muxes           |    <0.001 |     1986 |     63400 |            3.13 |
+|   Register              |    <0.001 |      733 |    126800 |            0.58 |
+|   F7/F8 Muxes           |    <0.001 |     2509 |     63400 |            3.96 |
 |   LUT as Shift Register |    <0.001 |        6 |     19000 |            0.03 |
-|   Others                |     0.000 |       35 |       --- |             --- |
-| Signals                 |     0.002 |     4234 |       --- |             --- |
+|   Others                |     0.000 |       39 |       --- |             --- |
+| Signals                 |     0.003 |     3676 |       --- |             --- |
 | MMCM                    |     0.123 |        1 |         6 |           16.67 |
-| I/O                     |     0.011 |       56 |       210 |           26.67 |
+| I/O                     |     0.019 |       57 |       210 |           27.14 |
 | Static Power            |     0.098 |          |           |                 |
-| Total                   |     0.242 |          |           |                 |
+| Total                   |     0.251 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.026 |       0.011 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.087 |       0.069 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.009 |       0.005 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,15 +148,14 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| top             |     0.144 |
-|   accelerometer |     0.003 |
-|     adxl        |     0.003 |
+| top             |     0.153 |
+|   accelerometer |     0.002 |
+|     adxl        |     0.002 |
 |   clk108        |     0.124 |
 |     inst        |     0.124 |
-|   drawer        |     0.002 |
+|   drawer        |     0.003 |
 |   microphone    |     0.001 |
-|   score         |     0.001 |
-|   spaceship     |     0.002 |
+|   spaceship     |     0.001 |
 +-----------------+-----------+
 
 

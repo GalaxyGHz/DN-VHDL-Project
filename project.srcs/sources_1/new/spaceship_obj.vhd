@@ -1,34 +1,29 @@
 ----------------------------------------------------------------------------------
--- 
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity star is
-    generic (
-        star_pos_x : in natural range 0 to 1279;
-        star_pos_y : in natural range 0 to 1023
-    );
+entity spaceship_obj is
     port (
         clock        : in std_logic;
         reset        : in std_logic;
         display_area : in std_logic;
         column       : in natural range 0 to 1279;
         row          : in natural range 0 to 1023;
+        pos_x        : in natural range 0 to 1279;
+        pos_y        : in natural range 0 to 1023;
         valid        : out std_logic;
         data         : out std_logic_vector(11 downto 0)
     );
-end star;
+end spaceship_obj;
 
-architecture Behavioral of star is
+architecture Behavioral of spaceship_obj is
 
-    signal ROM_address : integer range 0 to 4000;
+    signal ROM_address : integer range 0 to 1088;
 
 begin
 
-    starROM: entity work.starROM(Behavioral)
+    spaceshipROM: entity work.spaceshipROM(Behavioral)
         port map (
             clock => clock,
             address => ROM_address,
@@ -45,12 +40,12 @@ begin
                     ROM_address <= 0;
                 end if;
                 
-                if row >= star_pos_y - 42 
-                    and row <= star_pos_y + 42 
-                    and column >= star_pos_x - 42 
-                    and column <= star_pos_x + 42 
+                if row >= pos_y - 16 
+                    and row <= pos_y + 16 
+                    and column >= pos_x - 16 
+                    and column <= pos_x + 16 
                 then
-                    if ROM_address = 7224 then -- number of pixels in asteroid image is 3600
+                    if ROM_address = 1088 then -- number of pixels in spaceship image is 1089
                         ROM_address <= 0;
                     else
                         ROM_address <= ROM_address + 1;

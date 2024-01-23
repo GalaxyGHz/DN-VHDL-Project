@@ -3,10 +3,10 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Jan  3 08:45:53 2024
-# Process ID: 23408
+# Start of session at: Sun Dec 31 13:48:57 2023
+# Process ID: 24380
 # Current directory: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent35132 C:\Users\Lazar\OneDrive\Desktop\1. semestar 3. letnik\dn\project\project\project.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23584 C:\Users\Lazar\OneDrive\Desktop\1. semestar 3. letnik\dn\project\project\project.xpr
 # Log file: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/vivado.log
 # Journal file: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project\vivado.jou
 # Running On: DESKTOP-NTKOJC8, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16558 MB
@@ -103,14 +103,26 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
-open_project: Time (s): cpu = 00:00:28 ; elapsed = 00:00:14 . Memory (MB): peak = 1598.801 ; gain = 345.344
+open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 1579.699 ; gain = 361.645
 update_compile_order -fileset sources_1
 reset_run synth_1
 INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
 launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Wed Jan  3 08:48:51 2024] Launched synth_1...
+[Sun Dec 31 13:59:53 2023] Launched synth_1...
 Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
-[Wed Jan  3 08:48:51 2024] Launched impl_1...
+[Sun Dec 31 13:59:53 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sun Dec 31 14:01:11 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
+[Sun Dec 31 14:01:11 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sun Dec 31 14:02:20 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
+[Sun Dec 31 14:02:20 2023] Launched impl_1...
 Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
 open_hw_manager
 connect_hw_server -allow_non_jtag
@@ -136,11 +148,11 @@ ECHO is off.
   ****** Build date   : Oct 10 2023-06:01:56
     **** Build number : 2023.2.1696910516
       ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
-      ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+      ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 
 
-connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 1677.910 ; gain = 0.000
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1677.305 ; gain = 0.000
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292B84383A
 set_property PROGRAM.FILE {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
@@ -157,9 +169,9 @@ INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed w
 reset_run synth_1
 INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
 launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Wed Jan  3 08:53:21 2024] Launched synth_1...
+[Sun Dec 31 14:05:25 2023] Launched synth_1...
 Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
-[Wed Jan  3 08:53:21 2024] Launched impl_1...
+[Sun Dec 31 14:05:25 2023] Launched impl_1...
 Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
 set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
@@ -171,9 +183,65 @@ INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed w
 reset_run synth_1
 INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
 launch_runs impl_1 -to_step write_bitstream -jobs 16
-[Wed Jan  3 09:03:45 2024] Launched synth_1...
+[Sun Dec 31 14:08:08 2023] Launched synth_1...
 Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
-[Wed Jan  3 09:03:46 2024] Launched impl_1...
+[Sun Dec 31 14:08:08 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sun Dec 31 14:11:13 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
+[Sun Dec 31 14:11:13 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sun Dec 31 14:13:44 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
+[Sun Dec 31 14:13:44 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sun Dec 31 14:17:19 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
+[Sun Dec 31 14:17:19 2023] Launched impl_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.srcs/utils_1/imports/synth_1/top.dcp with file C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/top.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+[Sun Dec 31 14:20:43 2023] Launched synth_1...
+Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/synth_1/runme.log
+[Sun Dec 31 14:20:43 2023] Launched impl_1...
 Run output will be captured here: C:/Users/Lazar/OneDrive/Desktop/1. semestar 3. letnik/dn/project/project/project.runs/impl_1/runme.log
 set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
@@ -183,4 +251,4 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Jan  3 09:06:54 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 31 14:24:21 2023...

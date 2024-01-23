@@ -14,6 +14,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 463.637 ; gain = 184.715
 Command: read_checkpoint -auto_incremental -incremental C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -26,9 +27,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14552
+INFO: [Synth 8-7075] Helper process launched with PID 11184
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1325.965 ; gain = 441.691
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1324.883 ; gain = 439.352
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/top.vhd:34]
 INFO: [Synth 8-6157] synthesizing module 'ClkGen' [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
@@ -54,12 +55,12 @@ INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/ExtraPrograms/Xilinx/Vivado/
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/ExtraPrograms/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:1951]
 INFO: [Synth 8-6155] done synthesizing module 'ClkGen_clk_wiz' (0#1) [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen_clk_wiz.v:65]
 INFO: [Synth 8-6155] done synthesizing module 'ClkGen' (0#1) [c:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.gen/sources_1/ip/ClkGen/ClkGen.v:65]
-INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd:17]
 INFO: [Synth 8-638] synthesizing module 'hsync' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/hsync.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'hsync' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/hsync.vhd:15]
 INFO: [Synth 8-638] synthesizing module 'vsync' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/vsync.vhd:17]
 INFO: [Synth 8-256] done synthesizing module 'vsync' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/imports/new/vsync.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'VGA' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'VGA' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd:17]
 INFO: [Synth 8-638] synthesizing module 'accelerometer' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/accelerometer.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'ADXL362' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/ADXL362.vhd:28]
 INFO: [Synth 8-638] synthesizing module 'SPI' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/SPI.vhd:24]
@@ -69,60 +70,38 @@ INFO: [Synth 8-256] done synthesizing module 'accelerometer' (0#1) [C:/Users/ano
 INFO: [Synth 8-638] synthesizing module 'spaceship' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'spaceship' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship.vhd:22]
 INFO: [Synth 8-638] synthesizing module 'drawer' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'spaceship_obj' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship_obj.vhd:20]
 INFO: [Synth 8-638] synthesizing module 'spaceshipROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'spaceshipROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'spaceship_obj' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship_obj.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'star_obj' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/star_obj.vhd:20]
 INFO: [Synth 8-638] synthesizing module 'starROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'starROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd:14]
-INFO: [Synth 8-638] synthesizing module 'asteroid' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 240 - type: integer 
-	Parameter asteroid_pos_y bound to: 130 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'star_obj' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/star_obj.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'asteroid_obj' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid_obj.vhd:20]
 INFO: [Synth 8-638] synthesizing module 'asteroidROM' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'asteroidROM' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'asteroid' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized0' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 1090 - type: integer 
-	Parameter asteroid_pos_y bound to: 190 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized0' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized1' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 520 - type: integer 
-	Parameter asteroid_pos_y bound to: 370 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized1' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized2' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 870 - type: integer 
-	Parameter asteroid_pos_y bound to: 520 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized2' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized3' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 130 - type: integer 
-	Parameter asteroid_pos_y bound to: 600 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized3' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized4' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 1100 - type: integer 
-	Parameter asteroid_pos_y bound to: 750 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized4' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'asteroid__parameterized5' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
-	Parameter asteroid_pos_x bound to: 370 - type: integer 
-	Parameter asteroid_pos_y bound to: 880 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'asteroid__parameterized5' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'asteroid_obj' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid_obj.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'drawer' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'microphone' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:27]
+INFO: [Synth 8-638] synthesizing module 'microphone' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:24]
 INFO: [Synth 8-638] synthesizing module 'prescaler' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
 	Parameter max_period bound to: 54 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'prescaler' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'prescaler__parameterized0' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
 	Parameter max_period bound to: 108000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'prescaler__parameterized0' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'microphone' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:27]
-INFO: [Synth 8-638] synthesizing module 'score' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd:24]
-INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'microphone' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'score' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd:24]
 	Parameter n bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'counter' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd:27]
-INFO: [Synth 8-638] synthesizing module 'seg_display' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'counter' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd:24]
+INFO: [Synth 8-638] synthesizing module 'seg_display' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd:21]
 	Parameter refresh_period bound to: 1600000 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'prescaler__parameterized1' [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
 	Parameter max_period bound to: 200000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'prescaler__parameterized1' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'seg_display' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'score' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'seg_display' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/seg_display.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'score' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/score.vhd:21]
 INFO: [Synth 8-256] done synthesizing module 'top' (0#1) [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/top.vhd:34]
 WARNING: [Synth 8-7129] Port clock in module asteroidROM is either unconnected or has no load
 WARNING: [Synth 8-7129] Port clock in module starROM is either unconnected or has no load
@@ -139,18 +118,18 @@ WARNING: [Synth 8-7129] Port rand_value[23] in module drawer is either unconnect
 WARNING: [Synth 8-7129] Port rand_value[22] in module drawer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[21] in module drawer is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1458.137 ; gain = 573.863
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1455.387 ; gain = 569.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1458.137 ; gain = 573.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1455.387 ; gain = 569.855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1458.137 ; gain = 573.863
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1455.387 ; gain = 569.855
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1458.137 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1455.387 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -165,9 +144,6 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Parsing XDC File [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'BTNU'. [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc:78]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc:78]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/constrs_1/imports/dn/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
@@ -178,23 +154,23 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1545.953 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1510.496 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1545.953 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1510.496 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1545.953 ; gain = 661.680
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1510.496 ; gain = 624.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1545.953 ; gain = 661.680
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1510.496 ; gain = 624.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -202,7 +178,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for clk108/inst. (constraint file  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property KEEP_HIERARCHY = SOFT for clk108. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1545.953 ; gain = 661.680
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1510.496 ; gain = 624.965
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SPI'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_sendreceive_reg' in module 'ADXL362'
@@ -254,7 +230,7 @@ state_wait_for_sample_rate_clock_enable |                             0100 |    
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_controller_reg' using encoding 'sequential' in module 'ADXL362'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1545.953 ; gain = 661.680
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1510.496 ; gain = 624.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -264,8 +240,8 @@ Detailed RTL Component Info :
 	   2 Input   27 Bit       Adders := 2     
 	   2 Input   18 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 5     
-	   2 Input   12 Bit       Adders := 11    
-	   2 Input   11 Bit       Adders := 18    
+	   2 Input   12 Bit       Adders := 18    
+	   2 Input   11 Bit       Adders := 39    
 	   2 Input   10 Bit       Adders := 6     
 	   2 Input    6 Bit       Adders := 3     
 	   2 Input    4 Bit       Adders := 1     
@@ -284,12 +260,12 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 24    
+	                1 Bit    Registers := 26    
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 1     
 	   2 Input   27 Bit        Muxes := 1     
 	   2 Input   13 Bit        Muxes := 3     
-	   2 Input   12 Bit        Muxes := 14    
+	   2 Input   12 Bit        Muxes := 7     
 	   2 Input   11 Bit        Muxes := 10    
 	   2 Input   10 Bit        Muxes := 8     
 	  10 Input   10 Bit        Muxes := 1     
@@ -313,7 +289,7 @@ Detailed RTL Component Info :
 	   9 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 42    
+	   2 Input    1 Bit        Muxes := 44    
 	   4 Input    1 Bit        Muxes := 1     
 	   7 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
@@ -334,9 +310,15 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-6040] Register ROM_address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register ROM_address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
 WARNING: [Synth 8-7129] Port clock in module asteroidROM is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clock in module starROM is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clock in module spaceshipROM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM__6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM__5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM__4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM__3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM__2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clock in module asteroidROM__1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[31] in module drawer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[30] in module drawer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[29] in module drawer is either unconnected or has no load
@@ -349,20 +331,28 @@ WARNING: [Synth 8-7129] Port rand_value[23] in module drawer is either unconnect
 WARNING: [Synth 8-7129] Port rand_value[22] in module drawer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rand_value[21] in module drawer is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping Report
-+-------------+------------+---------------+----------------+
-|Module Name  | RTL Object | Depth x Width | Implemented As | 
-+-------------+------------+---------------+----------------+
-|spaceshipROM | ROM        | 2048x11       | LUT            | 
-|starROM      | ROM        | 8192x2        | LUT            | 
-|asteroidROM  | ROM        | 4096x12       | LUT            | 
-+-------------+------------+---------------+----------------+
++--------------+------------+---------------+----------------+
+|Module Name   | RTL Object | Depth x Width | Implemented As | 
++--------------+------------+---------------+----------------+
+|spaceshipROM  | ROM        | 2048x11       | LUT            | 
+|starROM       | ROM        | 8192x2        | LUT            | 
+|asteroidROM   | ROM        | 4096x12       | LUT            | 
+|spaceship_obj | p_0_out    | 2048x11       | LUT            | 
+|star_obj      | p_0_out    | 8192x2        | LUT            | 
+|asteroidROM   | p_0_out    | 4096x12       | LUT            | 
+|asteroidROM   | p_0_out    | 4096x12       | LUT            | 
+|asteroidROM   | p_0_out    | 4096x12       | LUT            | 
+|asteroidROM   | p_0_out    | 4096x12       | LUT            | 
+|asteroidROM   | p_0_out    | 4096x12       | LUT            | 
+|asteroidROM   | p_0_out    | 4096x12       | LUT            | 
++--------------+------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -371,19 +361,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:28 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Timing Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:01:40 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Technology Mapping : Time (s): cpu = 00:01:45 ; elapsed = 00:01:47 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -401,37 +391,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished IO Insertion : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -465,44 +455,43 @@ Report Cell Usage:
 |1     |BUFG       |     2|
 |2     |CARRY4     |   134|
 |3     |LUT1       |    76|
-|4     |LUT2       |   320|
-|5     |LUT3       |   127|
-|6     |LUT4       |   149|
-|7     |LUT5       |   332|
-|8     |LUT6       |  4802|
+|4     |LUT2       |   372|
+|5     |LUT3       |   132|
+|6     |LUT4       |   144|
+|7     |LUT5       |   327|
+|8     |LUT6       |  4662|
 |9     |MMCME2_ADV |     1|
-|10    |MUXF7      |  1810|
-|11    |MUXF8      |   176|
+|10    |MUXF7      |  1837|
+|11    |MUXF8      |   672|
 |12    |SRL16E     |     8|
-|13    |FDRE       |   621|
-|14    |FDSE       |    26|
-|15    |IBUF       |     5|
+|13    |FDRE       |   699|
+|14    |FDSE       |    34|
+|15    |IBUF       |     6|
 |16    |OBUF       |    51|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:30 ; elapsed = 00:01:37 . Memory (MB): peak = 1672.793 ; gain = 700.703
-Synthesis Optimization Complete : Time (s): cpu = 00:01:38 ; elapsed = 00:01:39 . Memory (MB): peak = 1672.793 ; gain = 788.520
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:42 ; elapsed = 00:01:49 . Memory (MB): peak = 1690.699 ; gain = 750.059
+Synthesis Optimization Complete : Time (s): cpu = 00:01:50 ; elapsed = 00:01:51 . Memory (MB): peak = 1690.699 ; gain = 805.168
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1672.793 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2121 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1690.699 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2644 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1672.793 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1690.699 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 The system cannot find the path specified.
-Synth Design complete | Checksum: a3141e90
+Synth Design complete | Checksum: d44f2880
 INFO: [Common 17-83] Releasing license: Synthesis
-97 Infos, 30 Warnings, 1 Critical Warnings and 0 Errors encountered.
+89 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 1672.793 ; gain = 1197.160
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1672.793 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:53 ; elapsed = 00:01:56 . Memory (MB): peak = 1690.699 ; gain = 1214.305
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1690.699 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 23 21:43:31 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 23 23:30:16 2024...

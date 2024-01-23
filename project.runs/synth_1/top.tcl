@@ -70,12 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 2
-set_param synth.incrementalSynthesisCache C:/Users/anony/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-7732-LAPTOP-HLQDUBUP/incrSyn
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -100,10 +94,12 @@ read_vhdl -library xil_defaultlib {
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/VGA.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/accelerometer.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroidROM.vhd
-  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/asteroid_obj.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/counter.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceshipROM.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/spaceship_obj.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/starROM.vhd
+  C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/star_obj.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/drawer.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/prescaler.vhd
   C:/Users/anony/OneDrive/Documents/FAKS/3-letnik/dn/DN-VHDL-Project/project.srcs/sources_1/new/microphone.vhd

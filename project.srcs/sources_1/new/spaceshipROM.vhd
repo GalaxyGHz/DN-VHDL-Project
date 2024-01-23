@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity spaceshipROM is
     port (
         clock : in std_logic;
-        address : in integer range 0 to 2000; -- 11 bit address = 2024 words
+        address : in integer range 0 to 1088; -- 11 bit address = 2024 words
         data : out std_logic_vector(11 downto 0)  -- a 12 bit word 
     );
 end entity;

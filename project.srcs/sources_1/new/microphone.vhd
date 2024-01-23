@@ -1,7 +1,4 @@
 ----------------------------------------------------------------------------------
---  
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -12,7 +9,7 @@ entity microphone is
         clock   : in std_logic;
         reset   : in std_logic;
         
-        SW      : in std_logic;
+        SW      : in std_logic_vector(1 downto 0);
         LED     : out std_logic_vector(15 downto 0);
         
         M_DATA  : in std_logic;
@@ -43,7 +40,7 @@ begin
     M_LRSEL <= '0';
     
     -- nastavitev frekvence vzorcenja
-    sampler_period <= sampler_max_period when sw = '1' else
+    sampler_period <= sampler_max_period when SW(1) = '1' else
                       sampler_max_period / 16;
 
     -- instanciranje prescaler modula za 1MHz uro
@@ -93,7 +90,11 @@ begin
             
             -- zapis na izhod
             if sampler_en='1' then
-                led <= bits(15 downto 0);
+                if SW(0) = '0' then
+                    led <= (others => '0');
+                else
+                    led <= bits(15 downto 0);
+                end if;
                 value <= UNSIGNED(bits);
             end if;
         end if;

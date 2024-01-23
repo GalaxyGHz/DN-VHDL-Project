@@ -6,7 +6,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity asteroidROM is
     port (
         clock : in std_logic;
-        address : in integer range 0 to 4000; -- 12 bit address = 4048 words
+        address : in integer range 0 to 3599; -- 12 bit address = 4048 words
         data : out std_logic_vector(11 downto 0)  -- a 12 bit word 
     );
 end entity;
