@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu Jan 18 12:05:46 2024
+| Date         : Tue Jan 23 19:19:07 2024
 | Host         : LAPTOP-HLQDUBUP running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -36,11 +36,11 @@ Table of Contents
 |   LUT as Memory            |    8 |     0 |          0 |     19000 |  0.04 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |    8 |     0 |            |           |       |
-| Slice Registers            |  534 |     0 |          0 |    126800 |  0.42 |
-|   Register as Flip Flop    |  534 |     0 |          0 |    126800 |  0.42 |
+| Slice Registers            |  576 |     0 |          0 |    126800 |  0.45 |
+|   Register as Flip Flop    |  576 |     0 |          0 |    126800 |  0.45 |
 |   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                   |  280 |     0 |          0 |     31700 |  0.88 |
-| F8 Muxes                   |  100 |     0 |          0 |     15850 |  0.63 |
+| F7 Muxes                   |  281 |     0 |          0 |     31700 |  0.89 |
+| F8 Muxes                   |   99 |     0 |          0 |     15850 |  0.62 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -60,8 +60,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 37    |          Yes |         Set |            - |
-| 497   |          Yes |       Reset |            - |
+| 29    |          Yes |         Set |            - |
+| 547   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,18 +150,18 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| LUT6       |  982 |                 LUT |
-| FDRE       |  497 |        Flop & Latch |
-| MUXF7      |  280 |               MuxFx |
-| LUT2       |  229 |                 LUT |
-| LUT5       |  212 |                 LUT |
-| LUT4       |  191 |                 LUT |
+| LUT6       | 1006 |                 LUT |
+| FDRE       |  547 |        Flop & Latch |
+| MUXF7      |  281 |               MuxFx |
+| LUT2       |  237 |                 LUT |
+| LUT5       |  214 |                 LUT |
+| LUT4       |  134 |                 LUT |
 | CARRY4     |  119 |          CarryLogic |
-| LUT3       |  101 |                 LUT |
-| MUXF8      |  100 |               MuxFx |
-| LUT1       |   79 |                 LUT |
+| MUXF8      |   99 |               MuxFx |
+| LUT3       |   96 |                 LUT |
+| LUT1       |   77 |                 LUT |
 | OBUF       |   51 |                  IO |
-| FDSE       |   37 |        Flop & Latch |
+| FDSE       |   29 |        Flop & Latch |
 | SRL16E     |    8 |  Distributed Memory |
 | IBUF       |    8 |                  IO |
 | BUFG       |    2 |               Clock |

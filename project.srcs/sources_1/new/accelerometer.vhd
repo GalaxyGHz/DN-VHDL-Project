@@ -6,18 +6,19 @@ use IEEE.NUMERIC_STD.ALL;
 use IEEE.std_logic_signed.all;
 
 entity accelerometer is
-    port (
-        clk108mhz  : in STD_LOGIC; -- System Clock
-        reset      : in STD_LOGIC;
+    port
+(
+        clk108mhz   : in STD_LOGIC; -- System Clock
+        reset       : in STD_LOGIC;
         -- Accelerometer data signals
-        accel_x    : out STD_LOGIC_VECTOR (9 downto 0);
-        accel_y    : out STD_LOGIC_VECTOR (9 downto 0);
+        accel_x     : out STD_LOGIC_VECTOR (9 downto 0);
+        accel_y     : out STD_LOGIC_VECTOR (9 downto 0);
         accel_ready : out STD_LOGIC;
         --SPI Interface Signals
-        sclk       : out STD_LOGIC;
-        mosi       : out STD_LOGIC;
-        miso       : in STD_LOGIC;
-        ss         : out STD_LOGIC
+        sclk        : out STD_LOGIC;
+        mosi        : out STD_LOGIC;
+        miso        : in STD_LOGIC;
+        ss          : out STD_LOGIC
     );
 end accelerometer;
 
@@ -75,16 +76,16 @@ begin
     accel_y <= accel_y_shifted(11 downto 2);
     accel_ready <= accel_ready_in;
 
-    adxl: entity work.ADXL362Ctrl(Behavioral)
+    adxl: entity work.ADXL362(Behavioral)
         port map (
-            SYSCLK => clk108mhz,
+            clk108mhz => clk108mhz,
             reset => reset,
             -- Accelerometer data signals
-            ACCEL_X => accel_x_in,
-            ACCEL_Y => accel_y_in,
-            ACCEL_Z => accel_z_in,
-            ACCEL_TMP => accel_temp_in,
-            Data_Ready => accel_ready_in,
+            accel_x => accel_x_in,
+            accel_y => accel_y_in,
+            accel_z => accel_z_in,
+            accel_temp => accel_temp_in,
+            accel_ready => accel_ready_in,
             --SPI Interface Signals
             sclk => sclk,
             mosi => mosi,

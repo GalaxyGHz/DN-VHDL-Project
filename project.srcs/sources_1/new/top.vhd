@@ -46,7 +46,7 @@ architecture Behavioral of top is
 
     -- Accelerometer information
     signal ACCEL_X : STD_LOGIC_VECTOR (9 downto 0);
-    signal ACCEL_Y: STD_LOGIC_VECTOR (9 downto 0);
+    signal ACCEL_Y : STD_LOGIC_VECTOR (9 downto 0);
     signal ACCEL_READY : std_logic;
 
     -- Spaceship position
@@ -58,6 +58,13 @@ architecture Behavioral of top is
     
     -- Star collected
     signal star : std_logic;
+    
+    -- Crashed into asteroid
+    signal collision : std_logic;
+    
+    -- tmp debug
+--    signal tmp_segval : unsigned (31 downto 0);
+--    signal BTNU : std_logic;
 
 begin
 
@@ -124,11 +131,13 @@ begin
             vga_r => VGA_R,
             vga_g => VGA_G,
             vga_b => VGA_B,
-            star => star
+            star => star,
+            collision => collision
+--            tmp_segval => tmp_segval
         );
         
     -- (Pseudo-) random number generator from microphone
-    random: entity work.random(Behavioral)
+    microphone: entity work.microphone(Behavioral)
         port map (
             clock => CLK108MHZ,
             reset => CPU_RESET,
@@ -144,9 +153,11 @@ begin
         port map (
             clock => CLK108MHZ,
             reset => CPU_RESET,
-            star  => star,   -- ko se pobere zvezda, je ta signal aktiven, da se vec pristeje
+            star  => star,   -- ko se pobere zvezda, je ta signal aktiven
+            collision => collision,
             AN    => AN,
             SEG   => SEG
+--            tmp_segval => tmp_segval
         );
 
 end Behavioral;

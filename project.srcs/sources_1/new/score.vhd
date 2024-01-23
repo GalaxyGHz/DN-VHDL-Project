@@ -9,18 +9,21 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity score is
     Port ( 
-        clock : in std_logic;
-        reset : in std_logic;
-        star  : in std_logic;
-        AN    : out unsigned(7 downto 0);
-        SEG   : out unsigned(7 downto 0)
+        clock     : in std_logic;
+        reset     : in std_logic;
+        star      : in std_logic;
+        collision : in std_logic;
+        AN        : out unsigned(7 downto 0);
+        SEG       : out unsigned(7 downto 0)
+        
+--        tmp_segval : in unsigned(31 downto 0)
     );
 end score;
 
 
 architecture Behavioral of score is
 
-    constant max_period  : positive := 108e6 / 2; -- 4x na sekundo
+    constant max_period  : positive := 108e6; -- 1x na sekundo
     constant counter_width  : positive := 32;
     constant display_refresh_period : positive := 16e5; -- 16ms na 8 LEDic = frekvenca ~16Hz
     
@@ -30,7 +33,7 @@ architecture Behavioral of score is
 
 begin
 
-    prescaler_period <= max_period / 2;
+    prescaler_period <= max_period;
     
     -- instanciranje modula prescaler
     prescaler : entity work.prescaler
@@ -56,6 +59,7 @@ begin
         count_up     => '1',
         count_down   => '0',
         star         => star,
+        collision    => collision,
         value        => counter_value
     );
     
@@ -68,6 +72,7 @@ begin
         clock          => clock,
         reset          => reset,
         value          => counter_value,
+--        value          => tmp_segval,
         anode_select   => AN,
         segment_select => SEG
     );

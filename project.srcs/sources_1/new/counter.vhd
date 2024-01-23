@@ -18,6 +18,7 @@ entity counter is
         count_up     : in std_logic;
         count_down   : in std_logic;
         star         : in std_logic;
+        collision    : in std_logic;
         value        : out unsigned(n-1 downto 0)
     );
 end entity;
@@ -37,14 +38,16 @@ begin
         if rising_edge(clock) then
             if reset='1' then
                 count <= (others => '0');
+                star_old <= '0';
             else
-                if clock_enable = '1' then
-                    -- add value for star
-                    if star = '1' and star_old = '0' then
-                        count <= count + 32000;
-                    end if;
-                    star_old <= star;
+                if collision = '1' then
+                    count <= (others => '0');
                     
+                elsif star = '1' and star_old = '0' then
+                    -- add value for star
+                    count <= count + 65536;
+                    
+                elsif clock_enable = '1' then
                     -- increment or decrement
                     if count_up='1' and count_down='0' then
                         count <= count + 1;
@@ -52,6 +55,8 @@ begin
                         count <= count - 1;
                     end if;
                 end if;
+                
+                star_old <= star;
             end if;
         end if;
     end process;

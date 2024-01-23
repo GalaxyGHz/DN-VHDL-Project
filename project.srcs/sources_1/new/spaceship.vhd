@@ -6,16 +6,17 @@ use IEEE.NUMERIC_STD.ALL;
 use IEEE.std_logic_signed.all;
 
 entity spaceship is
-    Port ( clk108mhz : in STD_LOGIC;
-         reset : in STD_LOGIC;
-         -- Accelerometer data
-         accel_x : in STD_LOGIC_VECTOR (9 downto 0);
-         accel_y : in STD_LOGIC_VECTOR (9 downto 0);
-         accel_ready : in std_logic;
-         -- Spaceship position
-         spaceship_pos_x : out natural range 0 to 1279;
-         spaceship_pos_y : out natural range 0 to 1023
-        );
+    Port ( 
+        clk108mhz : in STD_LOGIC;
+        reset : in STD_LOGIC;
+        -- Accelerometer data
+        accel_x : in STD_LOGIC_VECTOR (9 downto 0);
+        accel_y : in STD_LOGIC_VECTOR (9 downto 0);
+        accel_ready : in std_logic;
+        -- Spaceship position
+        spaceship_pos_x : out natural range 0 to 1279;
+        spaceship_pos_y : out natural range 0 to 1023
+    );
 end spaceship;
 
 architecture Behavioral of spaceship is
