@@ -113,18 +113,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/hsync.vhd">
+      <File Path="$PSRCDIR/sources_1/new/hsync.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vga/vgaController/vgaController.srcs/sources_1/new/hsync.vhd"/>
-          <Attr Name="ImportTime" Val="1700035677"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/vsync.vhd">
+      <File Path="$PSRCDIR/sources_1/new/vsync.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../vga/vgaController/vgaController.srcs/sources_1/new/vsync.vhd"/>
-          <Attr Name="ImportTime" Val="1700035700"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
